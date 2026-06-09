@@ -55,4 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
             demoNote.textContent = 'Fitur ini akan tersedia pada tahap pengembangan berikutnya.';
         });
     });
+
+    document.querySelectorAll('[data-admin-sidebar-toggle]').forEach((button) => {
+        button.addEventListener('click', () => {
+            document.body.classList.toggle('admin-sidebar-open');
+        });
+    });
 });

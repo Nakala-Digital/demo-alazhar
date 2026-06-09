@@ -39,6 +39,15 @@ class ExampleTest extends TestCase
         $response->assertRedirect(route('admin.dashboard'));
     }
 
+    public function test_admin_dashboard_is_available(): void
+    {
+        $this->get(route('admin.dashboard'))
+            ->assertOk()
+            ->assertSee('Dashboard Admin')
+            ->assertSee('Total Pendaftar')
+            ->assertSee('Pendaftaran Terbaru');
+    }
+
     public function test_invalid_credentials_return_a_login_error(): void
     {
         $response = $this->from(route('login'))->post(route('login.submit'), [
