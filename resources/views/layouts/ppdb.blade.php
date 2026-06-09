@@ -13,29 +13,31 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
 </head>
-<body>
+<body class="{{ $bodyClass ?? '' }}">
     <div class="app-shell">
         <x-ppdb.sidebar :active="$active" />
 
         <div class="main-shell">
             <x-ppdb.topbar />
-            <main class="page-content">
-                <div class="page-header">
-                    <div>
-                        <p>PPDB Portal 2026/2027</p>
-                        <h1>{{ $pageTitle }}</h1>
-                        @if ($pageDescription)
-                            <span>{{ $pageDescription }}</span>
-                        @endif
+            <main class="main-content fin-main-content" data-main-content>
+                <div class="main-inner fin-main-inner">
+                    <div class="page-header">
+                        <div>
+                            <p>PPDB Portal 2026/2027</p>
+                            <h1>{{ $pageTitle }}</h1>
+                            @if ($pageDescription)
+                                <span>{{ $pageDescription }}</span>
+                            @endif
+                        </div>
+                        <nav aria-label="Breadcrumb">
+                            <a href="{{ route('ppdb.dashboard') }}">Dashboard</a>
+                            <iconify-icon icon="solar:alt-arrow-right-linear"></iconify-icon>
+                            <strong>{{ $pageTitle }}</strong>
+                        </nav>
                     </div>
-                    <nav aria-label="Breadcrumb">
-                        <a href="{{ route('ppdb.dashboard') }}">Dashboard</a>
-                        <iconify-icon icon="solar:alt-arrow-right-linear"></iconify-icon>
-                        <strong>{{ $pageTitle }}</strong>
-                    </nav>
-                </div>
 
-                @yield('content')
+                    @yield('content')
+                </div>
             </main>
             <x-ppdb.footer />
         </div>

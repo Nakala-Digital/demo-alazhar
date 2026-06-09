@@ -1,7 +1,7 @@
 <footer class="footerbar">
     <div class="footer-item brand-footer">
         <iconify-icon icon="solar:shield-check-outline"></iconify-icon>
-        <div><strong>PPDB 2026/2027</strong><span>© Al Azhar Syifa Budi 2026/2027</span></div>
+        <div><strong>PPDB 2026/2027</strong><span>&copy; Al Azhar Syifa Budi 2026/2027</span></div>
     </div>
     <div class="footer-item">
         <iconify-icon icon="solar:phone-calling-rounded-outline"></iconify-icon>

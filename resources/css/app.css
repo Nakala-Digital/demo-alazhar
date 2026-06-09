@@ -85,7 +85,7 @@ iconify-icon {
     grid-template-columns: 58px 1fr;
     gap: 14px;
     align-items: center;
-    margin-bottom: 58px;
+    margin-bottom: 44px;
 }
 
 .brand-logo {
@@ -98,6 +98,7 @@ iconify-icon {
     background: linear-gradient(180deg, #d8f1c8 0%, #fff 100%);
     border: 2px solid #9ccc62;
     box-shadow: 0 4px 14px rgb(0 0 0 / 18%);
+    overflow: hidden;
 }
 
 .brand-logo span {
@@ -108,6 +109,13 @@ iconify-icon {
     border: 2px solid var(--blue-950);
     border-radius: 50%;
     font-size: 13px;
+}
+
+.brand-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .brand-block strong,
@@ -125,13 +133,47 @@ iconify-icon {
     font-size: 16px;
 }
 
+.status-nav-feature {
+    min-height: 58px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 34px;
+    color: #fff;
+}
+
+.status-nav-feature strong {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #6bd42d, #2d8d19);
+    box-shadow: 0 8px 18px rgb(0 0 0 / 18%);
+    font-size: 20px;
+    line-height: 1;
+}
+
+.status-nav-feature span {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.status-nav-feature:hover span,
+.status-nav-feature.is-active span {
+    color: #fff;
+}
+
 .side-nav {
     display: grid;
-    gap: 14px;
+    gap: 10px;
 }
 
 .nav-link {
-    min-height: 56px;
+    min-height: 48px;
     display: flex;
     align-items: center;
     gap: 18px;
@@ -155,27 +197,28 @@ iconify-icon {
 }
 
 .logout-wrap {
-    margin-top: 30px;
-    padding-top: 26px;
+    margin-top: 22px;
+    padding-top: 22px;
     border-top: 1px solid rgb(255 255 255 / 28%);
 }
 
 .sidebar-message {
     position: relative;
-    min-height: 236px;
+    min-height: clamp(172px, 22vh, 236px);
     margin-top: auto;
-    padding: 38px 22px 24px;
+    padding: clamp(26px, 3vh, 38px) 22px 24px;
     overflow: hidden;
     border: 1px solid #d9a727;
     border-radius: 26px;
     background: linear-gradient(165deg, rgb(1 42 104 / 82%), rgb(0 27 83 / 88%));
     box-shadow: inset 0 -4px 0 rgb(242 181 38 / 75%);
+    isolation: isolate;
 }
 
 .sidebar-message p,
 .sidebar-message strong {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: block;
     margin: 0 0 12px;
     color: #fff;
@@ -189,11 +232,23 @@ iconify-icon {
 
 .mosque-line {
     position: absolute;
-    right: 14px;
-    bottom: 8px;
-    color: #f7c619;
-    font-size: 96px;
-    opacity: .95;
+    z-index: 1;
+    right: -16px;
+    bottom: -22px;
+    width: clamp(142px, 9vw, 178px);
+    height: clamp(164px, 12vh, 206px);
+    opacity: .98;
+    pointer-events: none;
+}
+
+.mosque-line img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right bottom;
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 8px 14px rgb(251 204 73 / 18%));
 }
 
 .main-shell {
@@ -285,7 +340,8 @@ iconify-icon {
     font-weight: 800;
 }
 
-.page-content {
+.page-content,
+.main-content {
     flex: 1;
     padding: 16px 22px 32px;
 }
@@ -915,6 +971,859 @@ iconify-icon {
     font-weight: 800;
 }
 
+.status-registration-page .page-header {
+    display: none;
+}
+
+.status-registration-page {
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+.status-registration-page .app-shell {
+    width: auto;
+    min-width: 0;
+    grid-template-columns: 308px minmax(0, 1fr);
+}
+
+.status-registration-page .main-shell,
+.status-registration-page .topbar,
+.status-registration-page .page-content,
+.status-registration-page .main-content {
+    width: auto;
+}
+
+.status-registration-page .page-content,
+.status-registration-page .main-content {
+    padding: 20px 22px 32px;
+}
+
+.status-registration-page .footerbar {
+    position: static;
+    width: auto;
+}
+
+.status-dashboard {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.status-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 402px);
+    gap: 18px;
+}
+
+.status-main,
+.status-sidebar {
+    min-width: 0;
+    display: grid;
+    align-content: start;
+    gap: 14px;
+}
+
+.status-welcome,
+.status-process,
+.status-card,
+.admin-note-card {
+    background: #fff;
+    border: 1px solid #dfe7f2;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.status-welcome {
+    min-height: 156px;
+    display: grid;
+    grid-template-columns: 100px minmax(340px, 1.2fr) minmax(220px, 1fr) auto;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 28px;
+}
+
+.welcome-mark {
+    width: 100px;
+    height: 100px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 16%), 0 10px 24px rgb(0 27 83 / 18%);
+}
+
+.welcome-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    background: #ffffff;
+}
+
+.welcome-copy h2 {
+    margin: 0 0 8px;
+    color: #1e3175;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.welcome-copy h2 span {
+    color: #f0a000;
+}
+
+.welcome-copy p {
+    margin: 0;
+    color: #4a5b82;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.student-select {
+    min-height: 92px;
+    display: grid;
+    align-content: center;
+    gap: 11px;
+    padding-left: 30px;
+    border-left: 1px solid #d8e2ef;
+}
+
+.student-select > span {
+    color: #3b5085;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.student-picker {
+    width: 100%;
+    min-height: 64px;
+    display: grid;
+    grid-template-columns: 42px 1fr 20px;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 12px;
+    color: #071f58;
+    background: #fff;
+    border: 1px solid #d4deea;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.student-avatar {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #dff0d2;
+    font-size: 26px;
+}
+
+.student-picker strong,
+.student-picker small {
+    display: block;
+}
+
+.student-picker strong {
+    color: #08245c;
+    font-size: 15px;
+}
+
+.student-picker small {
+    margin-top: 2px;
+    color: #687da0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.student-picker iconify-icon {
+    color: #08245c;
+    font-size: 20px;
+}
+
+.change-child {
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 15px;
+    color: #1f3775;
+    background: #fff;
+    border: 1px solid #d1dbe9;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.change-child iconify-icon {
+    color: #005cff;
+    font-size: 18px;
+}
+
+.status-process {
+    overflow: hidden;
+}
+
+.process-summary {
+    min-height: 136px;
+    display: grid;
+    grid-template-columns: 84px 246px minmax(0, 1fr);
+    align-items: center;
+    gap: 22px;
+    padding: 22px 30px;
+    border-bottom: 1px solid #e0e8f3;
+}
+
+.process-icon {
+    position: relative;
+    width: 78px;
+    height: 78px;
+    display: grid;
+    place-items: center;
+    color: #32a31b;
+    border-radius: 50%;
+    background: #e6f5df;
+}
+
+
+.current-status {
+    display: grid;
+    align-content: center;
+}
+
+.current-status span {
+    color: #526b95;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.current-status h2 {
+    margin: 6px 0 7px;
+    color: #005cff;
+    font-size: 25px;
+    line-height: 1.05;
+}
+
+.current-status strong {
+    width: max-content;
+    padding: 7px 17px;
+    color: #005cff;
+    background: #e7f0ff;
+    border-radius: 7px;
+    font-size: 13px;
+}
+
+.process-note {
+    min-height: 90px;
+    display: grid;
+    align-content: center;
+    padding-left: 28px;
+    border-left: 1px solid #d8e2ef;
+}
+
+.process-note p {
+    max-width: 610px;
+    margin: 0 0 12px;
+    color: #19376c;
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1.5;
+}
+
+.process-note span {
+    color: #254478;
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.tracking-steps {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 12px;
+    padding: 18px 24px 16px;
+}
+
+.tracking-step {
+    position: relative;
+    display: grid;
+    grid-template-rows: 26px auto auto;
+    gap: 6px;
+    align-content: start;
+    justify-items: start;
+    color: #0b2a70;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.tracking-step::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 34px;
+    right: -8px;
+    height: 2px;
+    border-top: 2px dotted #c7d3e4;
+}
+
+.tracking-step:last-child::after {
+    display: none;
+}
+
+.tracking-step.done::after {
+    border-top: 0;
+    height: 2px;
+    background: #43a62a;
+}
+
+.tracking-step.current::after {
+    border-top-color: #82adf6;
+}
+
+.step-dot {
+    position: relative;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    color: #1f3564;
+    background: #eef3f9;
+    border: 1px solid #c7d3e4;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.tracking-step.done .step-dot {
+    color: #fff;
+    background: #37a320;
+    border-color: #37a320;
+}
+
+.tracking-step.current .step-dot {
+    color: #fff;
+    background: #005cff;
+    border-color: #005cff;
+    box-shadow: 0 0 0 4px #e8f1ff;
+}
+
+.tracking-step strong {
+    color: #08245c;
+    font-size: 11px;
+    line-height: 1.2;
+}
+
+.tracking-step.done small {
+    color: #2d8d19;
+}
+
+.tracking-step.current strong {
+    color: #005cff;
+}
+
+.tracking-step.current small {
+    color: #005cff;
+}
+
+.tracking-step small {
+    display: block;
+    color: #687da0;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.status-content-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(300px, 1.12fr) minmax(260px, .92fr);
+    gap: 16px;
+}
+
+.status-card {
+    min-width: 0;
+    padding: 14px 18px;
+}
+
+.status-card header,
+.admin-note-card header {
+    margin-bottom: 9px;
+}
+
+.status-card h3,
+.admin-note-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: #082878;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.status-card h3 iconify-icon,
+.admin-note-card h3 iconify-icon {
+    color: #0d54d9;
+    font-size: 22px;
+}
+
+.activity-list {
+    position: relative;
+    display: grid;
+    gap: 0;
+    padding-left: 4px;
+}
+
+.activity-list::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    bottom: 16px;
+    left: 21px;
+    width: 2px;
+    background: #dfe7f2;
+}
+
+.activity-item {
+    position: relative;
+    min-height: 58px;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 12px;
+    color: #08245c;
+}
+
+.activity-icon {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    margin-top: 2px;
+    border-radius: 50%;
+    background: #eaf2ff;
+    border: 1px solid #cfe0ff;
+}
+
+.activity-icon iconify-icon {
+    color: #005cff;
+    font-size: 18px;
+}
+
+.activity-item.orange .activity-icon {
+    background: #fff1d7;
+    border-color: #ffd98d;
+}
+
+.activity-item.orange .activity-icon iconify-icon {
+    color: #f09812;
+}
+
+.activity-item.green .activity-icon {
+    background: #e9f7e4;
+    border-color: #cceabb;
+}
+
+.activity-item.green .activity-icon iconify-icon {
+    color: #35a51d;
+}
+
+.activity-item time {
+    color: #3e5b8d;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.activity-item em {
+    float: right;
+    padding: 3px 8px;
+    color: #005cff;
+    background: #e7f0ff;
+    border-radius: 7px;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 800;
+}
+
+.activity-item strong {
+    display: block;
+    margin: 1px 0 3px;
+    color: #092765;
+    font-size: 12px;
+    line-height: 1.25;
+}
+
+.activity-item p {
+    margin: 0;
+    color: #526b95;
+    font-size: 10px;
+    font-weight: 650;
+    line-height: 1.35;
+}
+
+.activity-card > a,
+.verification-card > a {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 12px;
+    color: #082878;
+    border-top: 1px solid #dfe7f2;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.activity-card > a iconify-icon,
+.verification-card > a iconify-icon {
+    font-size: 20px;
+}
+
+.verification-list {
+    display: grid;
+    border-top: 1px solid #e5edf7;
+}
+
+.verification-row {
+    min-height: 42px;
+    display: grid;
+    grid-template-columns: 22px minmax(0, 1fr) 122px;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid #e6edf6;
+}
+
+.verification-row > div > strong,
+.verification-row > div > span {
+    display: block;
+}
+
+.verification-file-icon {
+    position: relative;
+    justify-self: center;
+    width: 15px;
+    height: 17px;
+    border: 1.7px solid #60769c;
+    border-radius: 4px;
+}
+
+.verification-file-icon::before,
+.verification-file-icon::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    right: 3px;
+    height: 1.5px;
+    border-radius: 999px;
+    background: #60769c;
+}
+
+.verification-file-icon::before {
+    top: 5px;
+}
+
+.verification-file-icon::after {
+    top: 9px;
+}
+
+.verification-row > div > strong {
+    color: #08245c;
+    font-size: 12px;
+    line-height: 1.15;
+}
+
+.verification-row > div > span {
+    max-width: 100%;
+    margin-top: 3px;
+    overflow: hidden;
+    color: #526b95;
+    text-overflow: ellipsis;
+    font-size: 11px;
+    font-weight: 650;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.verification-badge {
+    justify-self: end;
+    width: 118px;
+    min-height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 6px;
+    padding: 0 9px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 850;
+    white-space: nowrap;
+}
+
+.verification-badge .verification-status-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.verification-badge.verified {
+    color: #2f931d;
+    background: #e9f7e4;
+}
+
+.verification-badge.review {
+    color: #e88b00;
+    background: #fff1d7;
+}
+
+.verification-badge.upload {
+    color: #314a7d;
+    background: #f3f6fa;
+}
+
+.verification-status-icon {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 14px;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.verification-status-icon.verified {
+    color: #4d9c3f;
+}
+
+.verification-status-icon.review {
+    color: #e29a2a;
+}
+
+.verification-status-icon.upload {
+    color: #436094;
+}
+
+.verification-status-icon::before,
+.verification-status-icon::after {
+    content: none;
+}
+
+.admin-note-card {
+    padding: 16px 18px;
+    background: linear-gradient(180deg, #fff6e3, #fffaf1);
+    border-color: #f1dba9;
+    box-shadow: 0 12px 30px rgb(180 112 20 / 13%);
+}
+
+.admin-note-card h3 {
+    color: #b35f00;
+}
+
+.note-status {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-top: 6px;
+    border-top: 1px solid #ead3a6;
+}
+
+.note-status span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #d37500;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.note-status iconify-icon {
+    color: #ff9f1a;
+    font-size: 18px;
+}
+
+.note-status small {
+    color: #334e83;
+    font-size: 11px;
+    font-weight: 650;
+}
+
+.admin-note-card > strong {
+    display: block;
+    margin-bottom: 12px;
+    color: #08245c;
+    font-size: 14px;
+}
+
+.admin-note-card > p {
+    margin: 0 0 14px;
+    color: #19376c;
+    font-size: 12px;
+    font-weight: 650;
+    line-height: 1.45;
+}
+
+.tips span {
+    display: block;
+    margin-bottom: 7px;
+    color: #e27b00;
+    font-size: 12px;
+    font-weight: 850;
+}
+
+.tips ul {
+    display: grid;
+    gap: 4px;
+    margin: 0 0 12px;
+    padding-left: 14px;
+    color: #17366f;
+    font-size: 11px;
+    font-weight: 650;
+}
+
+.admin-note-card button {
+    width: 100%;
+    min-height: 36px;
+    color: #082878;
+    background: #fff;
+    border: 1px solid #0050cd;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.info-registration dl {
+    margin: 0;
+}
+
+.info-registration dl div {
+    display: grid;
+    grid-template-columns: 128px 1fr;
+    gap: 14px;
+    align-items: center;
+    min-height: 39px;
+    border-bottom: 1px solid #e3eaf4;
+}
+
+.info-registration dl div:last-child {
+    border-bottom: 0;
+}
+
+.info-registration dt {
+    color: #536a93;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.info-registration dd {
+    margin: 0;
+    color: #081f58;
+    font-size: 12px;
+    font-weight: 900;
+    text-align: right;
+}
+
+.progress-registration h3 {
+    margin-bottom: 18px;
+}
+
+.progress-body {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    gap: 18px;
+}
+
+.progress-donut {
+    width: 95px;
+    height: 95px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: conic-gradient(#0b63f6 0deg 205deg, #39a823 205deg 226deg, #d7dbe2 226deg 360deg);
+}
+
+.progress-donut span {
+    width: 72px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    color: #0d225b;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.progress-body strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #08245c;
+    font-size: 15px;
+}
+
+.progress-body p,
+.next-step p {
+    margin: 0;
+    color: #354f84;
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1.45;
+}
+
+.next-step {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 8px 10px;
+}
+
+.next-step h3 {
+    grid-column: 1 / 3;
+}
+
+.next-step p {
+    grid-column: 2 / 3;
+}
+
+.quick-actions {
+    display: grid;
+    gap: 8px;
+}
+
+.quick-actions h3 {
+    margin-bottom: 2px;
+}
+
+.quick-actions a {
+    min-height: 34px;
+    display: grid;
+    grid-template-columns: 24px 1fr 20px;
+    align-items: center;
+    gap: 10px;
+    padding: 0 14px;
+    color: #005cff;
+    background: #fff;
+    border: 1px solid #005cff;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.quick-actions a.green {
+    color: #2d8d19;
+    border-color: #40a828;
+}
+
+.quick-actions a iconify-icon {
+    font-size: 18px;
+}
+
 @media (max-width: 1400px) {
     .app-shell {
         grid-template-columns: 280px minmax(0, 1fr);
@@ -930,6 +1839,18 @@ iconify-icon {
 
     .form-actions {
         gap: 28px;
+    }
+
+    .status-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .status-sidebar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .status-registration-page .footerbar {
+        left: 280px;
     }
 }
 
@@ -977,6 +1898,30 @@ iconify-icon {
     .footerbar {
         grid-template-columns: 1fr;
     }
+
+    .status-welcome,
+    .process-summary,
+    .status-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .student-select,
+    .process-note {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    .tracking-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tracking-step::after {
+        display: none;
+    }
+
+    .status-registration-page .footerbar {
+        position: static;
+    }
 }
 
 @media (max-width: 760px) {
@@ -1006,7 +1951,8 @@ iconify-icon {
         border-left: 0;
     }
 
-    .page-content {
+    .page-content,
+    .main-content {
         padding: 14px;
     }
 
@@ -1046,5 +1992,329 @@ iconify-icon {
 
     .footerbar {
         padding: 18px;
+    }
+
+    .status-registration-page .page-content,
+    .status-registration-page .main-content {
+        padding: 14px;
+    }
+
+    .status-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .status-welcome,
+    .status-process,
+    .status-card,
+    .admin-note-card {
+        padding: 16px;
+    }
+
+    .tracking-steps {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+
+    .info-registration dl div,
+    .progress-body {
+        grid-template-columns: 1fr;
+    }
+
+    .info-registration dd {
+        text-align: left;
+    }
+
+    .verification-row {
+        grid-template-columns: 24px 1fr;
+    }
+
+    .verification-badge {
+        grid-column: 2 / 3;
+        justify-self: start;
+    }
+}
+
+/* Final responsive reset for the status page. */
+.status-registration-page {
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+.status-registration-page .app-shell {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: clamp(260px, 15.8vw, 308px) minmax(0, 1fr);
+}
+
+.status-registration-page .sidebar {
+    width: auto;
+    padding: 18px clamp(16px, 1.15vw, 22px);
+}
+
+.status-registration-page .brand-block {
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.status-registration-page .brand-logo {
+    width: 52px;
+    height: 60px;
+}
+
+.status-registration-page .brand-block strong {
+    font-size: 17px;
+}
+
+.status-registration-page .brand-block span {
+    font-size: 14px;
+}
+
+.status-registration-page .status-nav-feature {
+    min-height: 52px;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.status-registration-page .status-nav-feature strong {
+    width: 42px;
+    height: 42px;
+    font-size: 17px;
+}
+
+.status-registration-page .status-nav-feature span {
+    font-size: 16px;
+}
+
+.status-registration-page .side-nav {
+    gap: 6px;
+}
+
+.status-registration-page .nav-link {
+    min-height: 42px;
+    gap: 13px;
+    padding: 0 14px;
+    font-size: 16px;
+}
+
+.status-registration-page .nav-link iconify-icon {
+    width: 24px;
+    font-size: 24px;
+}
+
+.status-registration-page .logout-wrap {
+    margin-top: 16px;
+    padding-top: 16px;
+}
+
+.status-registration-page .sidebar-message {
+    min-height: clamp(156px, 20vh, 206px);
+    padding: clamp(22px, 2.4vh, 30px) 20px 18px;
+    border-radius: 22px;
+}
+
+.status-registration-page .sidebar-message p,
+.status-registration-page .sidebar-message strong {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.status-registration-page .sidebar-message strong {
+    font-size: 15px;
+}
+
+.status-registration-page .mosque-line {
+    right: -18px;
+    bottom: -24px;
+    width: clamp(142px, 9.4vw, 174px);
+    height: clamp(162px, 16vh, 196px);
+}
+
+.status-registration-page .main-shell,
+.status-registration-page .topbar,
+.status-registration-page .main-content,
+.status-registration-page .page-content {
+    width: auto;
+}
+
+.status-registration-page .main-content,
+.status-registration-page .page-content {
+    padding: clamp(14px, 1.25vw, 20px);
+}
+
+.status-registration-page .fin-main-inner,
+.status-registration-page .status-dashboard {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.status-registration-page .status-layout {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) clamp(280px, 24vw, 402px);
+    gap: clamp(12px, 1.1vw, 18px);
+}
+
+.status-registration-page .status-welcome {
+    height: auto;
+    min-height: 0;
+    grid-template-columns: clamp(76px, 6vw, 118px) minmax(260px, 1fr) minmax(220px, 318px) auto;
+    gap: clamp(14px, 1.4vw, 24px);
+    padding: clamp(16px, 1.4vw, 22px) clamp(18px, 1.8vw, 28px);
+}
+
+.status-registration-page .process-summary {
+    height: auto;
+    min-height: 0;
+    grid-template-columns: clamp(64px, 5vw, 84px) minmax(190px, 246px) minmax(0, 1fr);
+    gap: clamp(14px, 1.25vw, 22px);
+    padding: clamp(16px, 1.5vw, 22px) clamp(18px, 1.9vw, 30px);
+}
+
+.status-registration-page .tracking-steps {
+    height: auto;
+    grid-template-columns: repeat(7, minmax(74px, 1fr));
+    gap: clamp(8px, .75vw, 12px);
+    padding: clamp(14px, 1.1vw, 18px) clamp(16px, 1.5vw, 24px);
+}
+
+.status-registration-page .tracking-step {
+    grid-template-rows: 26px auto auto;
+    gap: 6px;
+    font-size: clamp(9px, .65vw, 11px);
+}
+
+.status-registration-page .tracking-step::after {
+    top: 12px;
+    left: 34px;
+    right: -8px;
+}
+
+.status-registration-page .step-dot {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+}
+
+.status-registration-page .tracking-step strong {
+    font-size: clamp(9px, .65vw, 11px);
+}
+
+.status-registration-page .tracking-step small {
+    font-size: clamp(8px, .58vw, 10px);
+}
+
+.status-registration-page .status-process,
+.status-registration-page .status-content-grid > *,
+.status-registration-page .info-registration,
+.status-registration-page .progress-registration,
+.status-registration-page .next-step,
+.status-registration-page .quick-actions {
+    height: auto;
+    overflow: visible;
+}
+
+.status-registration-page .status-content-grid {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr) minmax(0, .92fr);
+    gap: clamp(12px, 1vw, 16px);
+}
+
+.status-registration-page .footerbar {
+    position: static;
+    width: auto;
+    min-height: 88px;
+    padding: 15px 34px;
+}
+
+.status-registration-page .footer-item iconify-icon {
+    font-size: 33px;
+}
+
+.status-registration-page .footer-item span,
+.status-registration-page .footer-item strong {
+    font-size: 13px;
+}
+
+@media (max-width: 1400px) {
+    .status-registration-page .status-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .status-registration-page .status-sidebar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .status-registration-page .status-content-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .status-registration-page .admin-note-card {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 1121px) {
+    .status-registration-page .nav-link span {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 1120px) {
+    .status-registration-page .app-shell {
+        display: block;
+        width: 100%;
+    }
+
+    .status-registration-page .sidebar {
+        width: auto;
+        height: auto;
+    }
+
+    .status-registration-page .topbar {
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    .status-registration-page .status-welcome,
+    .status-registration-page .process-summary,
+    .status-registration-page .status-content-grid,
+    .status-registration-page .status-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .status-registration-page .student-select,
+    .status-registration-page .process-note {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    .status-registration-page .tracking-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .status-registration-page .tracking-step::after {
+        display: none;
+    }
+}
+
+@media (max-width: 760px) {
+    .status-registration-page .main-content,
+    .status-registration-page .page-content {
+        padding: 14px;
+    }
+
+    .status-registration-page .tracking-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .status-registration-page .verification-row {
+        grid-template-columns: 22px minmax(0, 1fr);
+    }
+
+    .status-registration-page .verification-badge {
+        grid-column: 2 / 3;
+        justify-self: start;
     }
 }
