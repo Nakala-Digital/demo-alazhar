@@ -115,16 +115,10 @@
 
                 <main class="admin-content">
                     <section class="admin-summary-grid" aria-label="Ringkasan pendaftaran">
-                        @foreach ([
-                            ['Total Pendaftar', '1.248', '↑ 18% dari minggu lalu', 'blue', 'i-users'],
-                            ['Verifikasi Berkas', '892', '71,5% dari total pendaftar', 'green', 'i-checkfile'],
-                            ['Menunggu Verifikasi', '256', '20,5% dari total pendaftar', 'orange', 'i-clock'],
-                            ['Ditolak', '100', '8% dari total pendaftar', 'purple', 'i-x'],
-                            ['Diterima', '–', 'Belum ada pengumuman', 'sky', 'i-trophy'],
-                        ] as [$label, $value, $note, $tone, $icon])
-                            <article class="admin-summary-card admin-tone-{{ $tone }}">
-                                <div><span>{{ $label }}</span><strong>{{ $value }}</strong><small>{{ $note }}</small></div>
-                                <svg><use href="#{{ $icon }}"/></svg>
+                        @foreach ($stats as $stat)
+                            <article class="admin-summary-card admin-tone-{{ $stat['tone'] }}">
+                                <div><span>{{ $stat['label'] }}</span><strong>{{ $stat['value'] }}</strong><small>{{ $stat['note'] }}</small></div>
+                                <svg><use href="#{{ $stat['icon'] }}"/></svg>
                             </article>
                         @endforeach
                     </section>
@@ -190,16 +184,10 @@
                                 <table>
                                     <thead><tr><th>No.</th><th>Nama Pendaftar</th><th>Jenjang</th><th>Tanggal Daftar</th><th>Status</th><th>Aksi</th></tr></thead>
                                     <tbody>
-                                        @foreach ([
-                                            ['Ahmad Zaki Pratama','SMP','22 Mei 2025 10:15','Terverifikasi','verified'],
-                                            ['Aisyah Nur Haliza','SD','22 Mei 2025 09:48','Menunggu Verifikasi','waiting'],
-                                            ['Rafika Al Farizi','TK B','22 Mei 2025 09:30','Terverifikasi','verified'],
-                                            ['Nayla Putri Ramadhani','TK A','22 Mei 2025 09:12','Menunggu Verifikasi','waiting'],
-                                            ['Arkan Daffa Pratama','SMP','22 Mei 2025 08:55','Ditolak','rejected'],
-                                        ] as $index => [$name,$level,$date,$status,$class])
+                                        @foreach ($registrations as $index => $reg)
                                             <tr>
-                                                <td>{{ $index + 1 }}</td><td>{{ $name }}</td><td>{{ $level }}</td><td>{{ $date }}</td>
-                                                <td><span class="admin-status {{ $class }}">{{ $status }}</span></td>
+                                                <td>{{ $index + 1 }}</td><td>{{ $reg['student_name'] }}</td><td>{{ $reg['level'] }}</td><td>{{ $reg['registered_at'] }}</td>
+                                                <td><span class="admin-status {{ $reg['status_class'] }}">{{ $reg['status'] }}</span></td>
                                                 <td><button type="button" class="admin-view"><svg><use href="#i-eye"/></svg></button></td>
                                             </tr>
                                         @endforeach
@@ -212,16 +200,10 @@
                         <article class="admin-card admin-activity-card">
                             <h2>Aktivitas Terbaru</h2>
                             <div class="admin-activity-list">
-                                @foreach ([
-                                    ['i-check','green','Verifikasi berkas pendaftar Ahmad Zaki Pratama','oleh Siti Nur Aisyah','10:15'],
-                                    ['i-cloud','blue','Dokumen diunggah oleh Aisyah Nur Haliza','(Kartu Keluarga)','09:48'],
-                                    ['i-calendar','blue','Jadwal Tes Akademik untuk jenjang SMP diperbarui','oleh Budi Santoso','09:30'],
-                                    ['i-megaphone','blue','Pengumuman "Lulus Seleksi Gelombang 1" diterbitkan','oleh Panitia PPDB','09:00'],
-                                    ['i-user','red','Pendaftar baru: Rafika Al Farizi','jenjang TK B','08:45'],
-                                ] as [$icon,$tone,$title,$sub,$time])
+                                @foreach ($activities as $activity)
                                     <div class="admin-activity-item">
-                                        <span class="admin-activity-icon {{ $tone }}"><svg><use href="#{{ $icon }}"/></svg></span>
-                                        <p>{{ $title }}<small>{{ $sub }}</small></p><time>{{ $time }}</time>
+                                        <span class="admin-activity-icon {{ $activity['color'] }}"><svg><use href="#{{ $activity['icon'] }}"/></svg></span>
+                                        <p>{{ $activity['message'] }} <small>{{ $activity['sub_message'] }}</small></p><time>{{ $activity['time'] }}</time>
                                     </div>
                                 @endforeach
                             </div>
@@ -234,14 +216,10 @@
                                 <button type="button" class="admin-create-button"><svg><use href="#i-plus"/></svg>Buat Pengumuman</button>
                             </div>
                             <div class="admin-announcement-list">
-                                @foreach ([
-                                    ['blue','Informasi Tes Akademik SMP','Tes akan dilaksanakan pada 24 Mei 2025.','22 Mei 2025'],
-                                    ['green','Pengumuman Lulus Seleksi Gelombang 1','Hasil seleksi dapat dilihat pada menu Hasil Seleksi.','20 Mei 2025'],
-                                    ['red','Jadwal Wawancara Orang Tua','Silakan cek jadwal wawancara di menu Jadwal & Seleksi.','18 Mei 2025'],
-                                ] as [$tone,$title,$text,$date])
-                                    <div class="admin-announcement {{ $tone }}">
+                                @foreach ($announcements as $announcement)
+                                    <div class="admin-announcement {{ $announcement['color'] }}">
                                         <svg><use href="#i-megaphone"/></svg>
-                                        <div><strong>{{ $title }}</strong><p>{{ $text }}</p><small>{{ $date }}</small></div>
+                                        <div><strong>{{ $announcement['title'] }}</strong><p>{{ $announcement['description'] }}</p><small>{{ $announcement['date'] }}</small></div>
                                     </div>
                                 @endforeach
                             </div>
