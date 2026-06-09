@@ -45,6 +45,12 @@ Route::get('/', function (Request $request) {
     return redirect()->route('login');
 });
 
+Route::get('/status-pendaptaran', fn () => view('status-pendaptaran.index', [
+    'pageTitle' => 'Status Pendaftaran',
+    'active' => 'status',
+    'bodyClass' => 'status-registration-page',
+]))->name('ppdb.status');
+
 Route::middleware(['guest_guard'])->group(function () {
     Route::get('/login', function () {
         return view('auth.login');
