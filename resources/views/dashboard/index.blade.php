@@ -12,7 +12,7 @@
             <section class="placeholder-card">
                 <h1>Dashboard Orang Tua / Calon Siswa</h1>
                 <p>Login hardcoded berhasil. Halaman dashboard lengkap akan dibuat pada tahap berikutnya.</p>
-                <a href="{{ route('login') }}">Kembali ke Login</a>
+                <a href="{{ route('ppdb.logout') }}">Keluar (Logout)</a>
             </section>
         </main>
     </body>

@@ -78,7 +78,7 @@
                         <span><strong>Panitia PPDB</strong><small>Super Admin</small></span>
                         <svg class="admin-user-arrow"><use href="#i-chevron"/></svg>
                     </div>
-                    <a href="{{ route('login') }}" class="admin-logout"><svg><use href="#i-logout"/></svg>Keluar</a>
+                    <a href="{{ route('ppdb.logout') }}" class="admin-logout"><svg><use href="#i-logout"/></svg>Keluar</a>
                 </div>
             </aside>
 
