@@ -9,6 +9,36 @@ Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
 
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');
+
+Route::post('/register', function (Request $request) {
+    $request->validate([
+        'name' => ['required', 'string', 'max:100'],
+        'email' => ['required', 'email'],
+        'phone' => ['required', 'string', 'max:20'],
+        'password' => ['required', 'string', 'min:8', 'confirmed'],
+        'relationship' => ['required', 'in:ayah,ibu,wali,saudara,lainnya'],
+        'terms' => ['accepted'],
+    ], [
+        'name.required' => 'Nama lengkap orang tua atau wali wajib diisi.',
+        'email.required' => 'Email wajib diisi.',
+        'email.email' => 'Format email belum sesuai.',
+        'phone.required' => 'Nomor HP atau WhatsApp wajib diisi.',
+        'password.required' => 'Password wajib diisi.',
+        'password.min' => 'Password minimal terdiri dari 8 karakter.',
+        'password.confirmed' => 'Konfirmasi password tidak sama.',
+        'relationship.required' => 'Pilih hubungan Anda dengan siswa.',
+        'relationship.in' => 'Pilihan hubungan dengan siswa tidak valid.',
+        'terms.accepted' => 'Anda harus menyetujui syarat dan kebijakan privasi.',
+    ]);
+
+    return redirect()
+        ->route('login')
+        ->with('success', 'Akun berhasil dibuat. Silakan masuk menggunakan akun Anda.');
+})->name('register.submit');
+
 Route::post('/login', function (Request $request) {
     $credentials = $request->validate([
         'role' => ['required', 'in:parent,admin'],
@@ -37,7 +67,7 @@ Route::post('/login', function (Request $request) {
 
     $request->session()->put('ppdb_role', $credentials['role']);
 
-    return redirect()->route($isAdmin ? 'admin.dashboard' : 'dashboard.index');
+    return redirect()->route($isAdmin ? 'admin.dashboard' : 'ppdb.dashboard');
 })->name('login.submit');
 
 Route::get('/dashboard', function () {

@@ -10,11 +10,11 @@ class ExampleTest extends TestCase
     /**
      * A basic test example.
      */
-    public function test_the_application_redirects_to_login(): void
+    public function test_the_application_home_page_is_available(): void
     {
         $response = $this->get('/');
 
-        $response->assertRedirect(route('login'));
+        $response->assertOk();
     }
 
     public function test_parent_credentials_redirect_to_parent_dashboard(): void
@@ -25,7 +25,7 @@ class ExampleTest extends TestCase
             'password' => 'password',
         ]);
 
-        $response->assertRedirect(route('dashboard.index'));
+        $response->assertRedirect('/dashboard');
     }
 
     public function test_admin_credentials_redirect_to_admin_dashboard(): void
@@ -50,5 +50,52 @@ class ExampleTest extends TestCase
         $response
             ->assertRedirect(route('login'))
             ->assertSessionHasErrors('login');
+    }
+
+    public function test_register_page_is_available(): void
+    {
+        $this->get(route('register'))
+            ->assertOk()
+            ->assertSee('Daftar Akun Baru');
+    }
+
+    public function test_valid_registration_redirects_to_login_with_success_message(): void
+    {
+        $response = $this->post(route('register.submit'), [
+            'name' => 'Ahmad Fauzi',
+            'email' => 'ahmad@example.com',
+            'phone' => '081234567890',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+            'relationship' => 'ayah',
+            'terms' => '1',
+        ]);
+
+        $response
+            ->assertRedirect(route('login'))
+            ->assertSessionHas('success');
+    }
+
+    public function test_registration_validation_errors_are_returned_inline(): void
+    {
+        $response = $this->from(route('register'))->post(route('register.submit'), [
+            'name' => '',
+            'email' => 'bukan-email',
+            'phone' => '',
+            'password' => 'pendek',
+            'password_confirmation' => 'berbeda',
+            'relationship' => '',
+        ]);
+
+        $response
+            ->assertRedirect(route('register'))
+            ->assertSessionHasErrors([
+                'name',
+                'email',
+                'phone',
+                'password',
+                'relationship',
+                'terms',
+            ]);
     }
 }

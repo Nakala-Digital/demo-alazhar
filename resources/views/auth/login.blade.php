@@ -8,7 +8,7 @@
         @fonts
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="ppdb-page">
+    <body class="ppdb-page login-page">
         <header class="topbar">
             <div class="brand-lockup">
                 <img class="school-logo school-logo--header" src="{{ asset('images/logo-alazhar.png') }}" alt="Logo Al Azhar Syifa Budi Parahyangan">
@@ -84,6 +84,13 @@
                         @csrf
                         <input type="hidden" name="role" id="selected-role" value="{{ old('role', 'parent') }}">
 
+                        @if (session('success'))
+                            <div class="form-success" role="status">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+                                <span>{{ session('success') }}</span>
+                            </div>
+                        @endif
+
                         <div class="role-tabs" role="tablist" aria-label="Pilih role login">
                             <button type="button" class="role-tab" data-role="parent">
                                 <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/></svg>
@@ -133,10 +140,10 @@
                             <svg viewBox="0 0 24 24"><rect x="6" y="10" width="12" height="10" rx="2"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/></svg>
                             Masuk ke Portal
                         </button>
-                        <button type="button" class="button button--outline demo-action">
+                        <a href="{{ route('register') }}" class="button button--outline">
                             <svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3"/><path d="M4 20v-2a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v2M18 8v6M15 11h6"/></svg>
                             Daftar Akun Baru
-                        </button>
+                        </a>
 
                         <div class="form-divider"><span>ATAU</span></div>
 
