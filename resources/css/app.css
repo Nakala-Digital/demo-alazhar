@@ -6784,9 +6784,20 @@ body .sidebar .sidebar-message strong {
         height: 100% !important;
         min-height: 0 !important;
         display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
         align-items: center !important;
-        justify-content: center !important;
-        overflow: hidden !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        padding-top: 24px !important;
+        padding-bottom: 24px !important;
+    }
+
+    .login-page .login-card-outer,
+    .register-page .register-card-outer,
+    .login-page .auth-card-outer {
+        margin-top: auto !important;
+        margin-bottom: auto !important;
     }
 
     .login-page .login-card,
@@ -6837,5 +6848,59 @@ body .sidebar .sidebar-message strong {
     .register-page .register-hero-content {
         transform: none !important;
         zoom: normal !important;
+    }
+
+    .login-page .hero-copy h1,
+    .register-page .register-hero-copy h1,
+    .login-page .hero-copy p,
+    .register-page .register-hero-copy p {
+        font-size: 30px !important;
+        margin-bottom: 8px !important;
+        line-height: 1.1 !important;
+    }
+
+    .login-page .hero-copy p,
+    .register-page .register-hero-copy p {
+        font-size: 13px !important;
+        margin-top: 8px !important;
+        line-height: 1.4 !important;
+    }
+
+    .login-page .hero-wordmark,
+    .register-page .register-wordmark {
+        width: 250px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .login-page .hero-content,
+    .register-page .register-hero-content {
+        margin-top: 18px !important;
+        margin-left: 28px !important;
+    }
+
+    .login-page .benefit-grid,
+    .register-page .register-benefits {
+        margin-top: 14px !important;
+        gap: 10px !important;
+    }
+
+    .login-page .benefit span,
+    .register-page .benefit span {
+        width: 36px !important;
+        height: 36px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .login-page .benefit p,
+    .register-page .benefit p {
+        font-size: 11px !important;
+    }
+
+    .login-page .security-badge,
+    .register-page .register-security-badge {
+        bottom: 16px !important;
+        left: 28px !important;
+        min-height: 36px !important;
+        padding: 6px 12px !important;
     }
 }
