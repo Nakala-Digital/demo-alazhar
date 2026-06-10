@@ -643,62 +643,62 @@ a { color: inherit; }
         min-height: 660px;
     }
 
-    .register-hero-content {
+    .register-hero-content, .hero-content {
         width: min(620px, calc(100% - 70px));
         margin-top: 24px;
         margin-left: 44px;
         transform: none;
     }
 
-    .register-wordmark {
+    .register-wordmark, .hero-wordmark {
         width: 240px;
         margin-bottom: 20px;
     }
 
-    .register-hero-copy h1 {
+    .register-hero-copy h1, .hero-copy h1 {
         font-size: 34px;
         margin-bottom: 12px;
     }
 
-    .register-hero-copy p {
+    .register-hero-copy p, .hero-copy p {
         font-size: 13.5px;
         line-height: 1.4;
         margin-top: 8px;
     }
 
-    .register-benefits {
+    .register-benefits, .benefit-grid {
         margin-top: 16px;
         gap: 12px;
     }
     
-    .register-benefits .benefit span {
+    .register-benefits .benefit span, .benefit span {
         width: 40px;
         height: 40px;
         margin-bottom: 6px;
     }
 
-    .register-benefits .benefit svg {
+    .register-benefits .benefit svg, .benefit svg {
         width: 18px;
         height: 18px;
     }
 
-    .register-security-badge {
+    .register-security-badge, .security-badge {
         bottom: 20px;
         left: 44px;
         padding: 8px 14px;
         min-height: 40px;
     }
     
-    .register-security-badge svg {
+    .register-security-badge svg, .security-badge svg {
         width: 16px;
         height: 16px;
     }
     
-    .register-security-badge span {
+    .register-security-badge span, .security-badge span {
         font-size: 11.5px;
     }
 
-    .register-panel {
+    .register-panel, .login-panel {
         padding: 12px;
     }
 
