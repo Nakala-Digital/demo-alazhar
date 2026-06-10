@@ -40,10 +40,12 @@
     </div>
 
     <div class="sidebar-message">
-        <p>Bersama Al Azhar,</p>
-        <strong>Membentuk Generasi</strong>
-        <p>Cerdas, Berakhlak,</p>
-        <p>dan Berprestasi.</p>
+        <div class="sidebar-message-copy">
+            <p>Bersama Al Azhar,</p>
+            <strong>Membentuk Generasi</strong>
+            <p>Cerdas, Berakhlak,</p>
+            <p>dan Berprestasi.</p>
+        </div>
         <div class="mosque-line" aria-hidden="true">
             <img src="{{ asset('assets/shiluate alazhar.png') }}" alt="Siluet Al Azhar">
         </div>

@@ -61,4 +61,29 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.toggle('admin-sidebar-open');
         });
     });
+
+    const profileToggle = document.querySelector('[data-profile-toggle]');
+    const profileDropdown = document.querySelector('[data-profile-dropdown]');
+
+    if (profileToggle && profileDropdown) {
+        const closeProfileDropdown = () => {
+            profileDropdown.classList.remove('is-open');
+            profileToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        profileToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const isOpen = profileDropdown.classList.toggle('is-open');
+            profileToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        profileDropdown.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+
+        document.addEventListener('click', closeProfileDropdown);
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeProfileDropdown();
+        });
+    }
 });

@@ -15,13 +15,13 @@ app('router')->aliasMiddleware('guest_guard', function (Request $request, Closur
 });
 
 app('router')->aliasMiddleware('parent_guard', function (Request $request, Closure $next) {
-    // TEMPORARY BYPASS FOR UI DEVELOPMENT
-    session([
-        'ppdb_auth' => true,
-        'ppdb_role' => 'parent',
-        'ppdb_user' => ['name' => 'Ahmad Fauzi', 'email' => 'ahmad@example.com'],
-    ]);
-    
+    if (!$request->session()->get('ppdb_auth')) {
+        return redirect()->route('login');
+    }
+    if ($request->session()->get('ppdb_role') === 'admin') {
+        return redirect()->route('admin.dashboard');
+    }
+
     return $next($request);
 });
 
@@ -45,12 +45,6 @@ Route::get('/', function (Request $request) {
     }
     return redirect()->route('login');
 });
-
-Route::get('/status-pendaptaran', fn () => view('status-pendaptaran.index', [
-    'pageTitle' => 'Status Pendaftaran',
-    'active' => 'status',
-    'bodyClass' => 'status-registration-page',
-]))->name('ppdb.status');
 
 Route::middleware(['guest_guard'])->group(function () {
     Route::get('/login', function () {
@@ -165,12 +159,14 @@ Route::middleware(['parent_guard'])->group(function () {
     Route::get('/dashboard', fn () => view('dashboard.index', [
         'pageTitle' => 'Dashboard',
         'active' => 'dashboard',
+        'bodyClass' => 'parent-dashboard-page',
         'pageDescription' => 'Ringkasan status pendaftaran, jadwal penting, dan informasi terbaru PPDB.',
     ]))->name('ppdb.dashboard');
 
     Route::get('/form-pendaftaran', fn () => view('form-pendaftaran.index', [
         'pageTitle' => 'Form Pendaftaran',
         'active' => 'form',
+        'bodyClass' => 'form-registration-page',
         'pageDescription' => 'Lengkapi data siswa, data orang tua, alamat, dan riwayat sekolah.',
     ]))->name('ppdb.form');
 
@@ -179,6 +175,12 @@ Route::middleware(['parent_guard'])->group(function () {
         'active' => 'dokumen',
         'pageDescription' => 'Unggah dan kelola dokumen persyaratan pendaftaran siswa.',
     ]))->name('ppdb.documents');
+
+    Route::get('/status-pendaptaran', fn () => view('status-pendaptaran.index', [
+        'pageTitle' => 'Status Pendaftaran',
+        'active' => 'status',
+        'bodyClass' => 'status-registration-page',
+    ]))->name('ppdb.status');
 
     Route::get('/jadwal', fn () => view('jadwal.index', [
         'pageTitle' => 'Jadwal',
