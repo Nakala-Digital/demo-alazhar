@@ -5,6 +5,7 @@
         ['key' => 'dashboard', 'label' => 'Dashboard', 'route' => 'ppdb.dashboard', 'icon' => 'heroicons:home'],
         ['key' => 'form', 'label' => 'Form Pendaftaran', 'route' => 'ppdb.form', 'icon' => 'heroicons:document-text'],
         ['key' => 'dokumen', 'label' => 'Dokumen', 'route' => 'ppdb.documents', 'icon' => 'heroicons:folder'],
+        ['key' => 'status', 'label' => 'Status Pendaftaran', 'route' => 'ppdb.status', 'icon' => 'heroicons:clipboard-document-check'],
         ['key' => 'jadwal', 'label' => 'Jadwal', 'route' => 'ppdb.schedule', 'icon' => 'heroicons:calendar-days'],
         ['key' => 'pengumuman', 'label' => 'Pengumuman', 'route' => 'ppdb.announcements', 'icon' => 'heroicons:megaphone'],
         ['key' => 'pengaturan', 'label' => 'Pengaturan', 'route' => 'ppdb.settings', 'icon' => 'heroicons:cog-6-tooth'],
@@ -13,7 +14,9 @@
 
 <aside class="sidebar">
     <div class="brand-block">
-        <img class="brand-logo" src="{{ asset('assets/images/logo_al-azhar.png') }}" alt="Logo Al Azhar Syifa Budi Parahyangan">
+        <div class="brand-logo">
+            <img src="{{ asset('assets/images/logo_al-azhar.png') }}" alt="Al Azhar Syifa Budi Parahyangan">
+        </div>
         <div>
             <strong>Al Azhar Syifa Budi</strong>
             <span>Parahyangan</span>
@@ -41,6 +44,8 @@
         <strong>Membentuk Generasi</strong>
         <p>Cerdas, Berakhlak,</p>
         <p>dan Berprestasi.</p>
-        <div class="mosque-line"><iconify-icon icon="hugeicons:mosque-01"></iconify-icon></div>
+        <div class="mosque-line" aria-hidden="true">
+            <img src="{{ asset('assets/status-pendaptaran/sidebar-mosque.png') }}" alt="">
+        </div>
     </div>
 </aside>
