@@ -5,12 +5,12 @@
         $steps = ['Data Siswa', 'Data Orang Tua', 'Alamat', 'Riwayat Sekolah', 'Upload Dokumen', 'Review', 'Selesai'];
         $currentStep = 5;
         $documents = [
-            ['no' => 1, 'title' => 'Akta Kelahiran', 'desc' => 'Scan akta kelahiran siswa', 'file' => 'Akta_Kelahiran_Aisyah_Putri.pdf', 'size' => '812 KB', 'type' => 'PDF', 'max' => 'Maks. 2MB', 'status' => 'Terverifikasi', 'tone' => 'success', 'icon' => 'solar:document-text-outline'],
-            ['no' => 2, 'title' => 'Kartu Keluarga', 'desc' => 'Scan kartu keluarga', 'file' => 'Kartu_Keluarga_Fauzi.pdf', 'size' => '1.2 MB', 'type' => 'PDF', 'max' => 'Maks. 2MB', 'status' => 'Terverifikasi', 'tone' => 'success', 'icon' => 'solar:document-text-outline'],
-            ['no' => 3, 'title' => 'Raport / Nilai', 'desc' => 'Scan raport / nilai terakhir', 'file' => 'Raport_Semester_5.pdf', 'size' => '1.8 MB', 'type' => 'PDF', 'max' => 'Maks. 5MB', 'status' => 'Dalam Review', 'tone' => 'warning', 'icon' => 'solar:document-text-outline'],
-            ['no' => 4, 'title' => 'Pas Foto 3x4', 'desc' => 'Foto terbaru latar belakang merah/biru', 'file' => null, 'size' => null, 'type' => 'JPG / PNG', 'max' => 'Maks. 2MB', 'status' => 'Belum Diunggah', 'tone' => 'danger', 'icon' => 'solar:gallery-outline'],
-            ['no' => 5, 'title' => 'KTP Orang Tua / Wali', 'desc' => 'Scan KTP orang tua atau wali', 'file' => 'KTP_Ahmad_Fauzi.pdf', 'size' => '926 KB', 'type' => 'PDF', 'max' => 'Maks. 2MB', 'status' => 'Upload Ulang', 'tone' => 'retry', 'icon' => 'solar:user-id-outline', 'note' => 'Catatan verifikasi: Foto kurang jelas. Mohon unggah ulang dengan resolusi lebih baik.'],
-            ['no' => 6, 'title' => 'Surat Keterangan / Dokumen Pendukung', 'desc' => 'Contoh: Surat Domisili, Prestasi, dll.', 'file' => 'Surat_Domisili.pdf', 'size' => '745 KB', 'type' => 'PDF', 'max' => 'Maks. 5MB', 'status' => 'Terverifikasi', 'tone' => 'success', 'icon' => 'solar:document-text-outline'],
+            ['no' => 1, 'title' => 'Akta Kelahiran', 'desc' => 'Scan akta kelahiran siswa', 'file' => 'Akta_Kelahiran_Aisyah_Putri.pdf', 'size' => '812 KB', 'type' => 'PDF', 'max' => 'Maks. 2MB', 'status' => 'Terverifikasi', 'tone' => 'success', 'icon' => 'heroicons:document-text'],
+            ['no' => 2, 'title' => 'Kartu Keluarga', 'desc' => 'Scan kartu keluarga', 'file' => 'Kartu_Keluarga_Fauzi.pdf', 'size' => '1.2 MB', 'type' => 'PDF', 'max' => 'Maks. 2MB', 'status' => 'Terverifikasi', 'tone' => 'success', 'icon' => 'heroicons:document-text'],
+            ['no' => 3, 'title' => 'Raport / Nilai', 'desc' => 'Scan raport / nilai terakhir', 'file' => 'Raport_Semester_5.pdf', 'size' => '1.8 MB', 'type' => 'PDF', 'max' => 'Maks. 5MB', 'status' => 'Dalam Review', 'tone' => 'warning', 'icon' => 'heroicons:document-text'],
+            ['no' => 4, 'title' => 'Pas Foto 3x4', 'desc' => 'Foto terbaru latar belakang merah/biru', 'file' => null, 'size' => null, 'type' => 'JPG / PNG', 'max' => 'Maks. 2MB', 'status' => 'Belum Diunggah', 'tone' => 'danger', 'icon' => 'heroicons:photo'],
+            ['no' => 5, 'title' => 'KTP Orang Tua / Wali', 'desc' => 'Scan KTP orang tua atau wali', 'file' => 'KTP_Ahmad_Fauzi.pdf', 'size' => '926 KB', 'type' => 'PDF', 'max' => 'Maks. 2MB', 'status' => 'Upload Ulang', 'tone' => 'retry', 'icon' => 'heroicons:identification', 'note' => 'Catatan verifikasi: Foto kurang jelas. Mohon unggah ulang dengan resolusi lebih baik.'],
+            ['no' => 6, 'title' => 'Surat Keterangan / Dokumen Pendukung', 'desc' => 'Contoh: Surat Domisili, Prestasi, dll.', 'file' => 'Surat_Domisili.pdf', 'size' => '745 KB', 'type' => 'PDF', 'max' => 'Maks. 5MB', 'status' => 'Terverifikasi', 'tone' => 'success', 'icon' => 'heroicons:document-text'],
         ];
     @endphp
 
@@ -21,7 +21,7 @@
                 <div class="step-line"></div>
                 <span>
                     @if ($number < $currentStep)
-                        <iconify-icon icon="solar:check-bold"></iconify-icon>
+                        &#10003;
                     @else
                         {{ $number }}
                     @endif
@@ -63,14 +63,18 @@
                         </div>
                         <div class="doc-type"><strong>{{ $document['type'] }}</strong><span>{{ $document['max'] }}</span></div>
                         <div class="status-badge {{ $document['tone'] }}">{{ $document['status'] }}</div>
-                        <div class="doc-actions">
-                            <button aria-label="Lihat dokumen"><iconify-icon icon="solar:eye-outline"></iconify-icon></button>
-                            @if ($document['tone'] === 'retry')
-                                <button aria-label="Upload ulang"><iconify-icon icon="solar:refresh-outline"></iconify-icon></button>
-                            @else
-                                <button class="danger" aria-label="Hapus dokumen"><iconify-icon icon="solar:trash-bin-trash-outline"></iconify-icon></button>
-                            @endif
-                        </div>
+                        @if (empty($document['file']))
+                            <div class="doc-actions is-empty" aria-hidden="true"></div>
+                        @else
+                            <div class="doc-actions">
+                                <button aria-label="Lihat dokumen"><iconify-icon icon="heroicons:eye"></iconify-icon></button>
+                                @if ($document['tone'] === 'retry')
+                                    <button aria-label="Upload ulang"><iconify-icon icon="heroicons:arrow-path"></iconify-icon></button>
+                                @else
+                                    <button class="danger" aria-label="Hapus dokumen"><iconify-icon icon="heroicons:trash"></iconify-icon></button>
+                                @endif
+                            </div>
+                        @endif
                         @if (! empty($document['note']))
                             <p class="doc-note">{{ $document['note'] }}</p>
                         @endif
@@ -102,20 +106,22 @@
                 <button><iconify-icon icon="solar:pen-new-square-outline"></iconify-icon>Ubah Pilihan</button>
             </section>
 
-            <section class="info-card">
+            <section class="info-card progress-card">
                 <div class="progress-head"><h3>Progress Pendaftaran</h3><strong>71%</strong></div>
                 <div class="progress-track"><span></span></div>
                 <ol class="mini-steps">
                     @foreach ($steps as $index => $label)
                         @php $number = $index + 1; @endphp
                         <li class="{{ $number < $currentStep ? 'done' : '' }} {{ $number === $currentStep ? 'current' : '' }}">
-                            <span>
+                            <span class="mini-status">
                                 @if ($number < $currentStep)
-                                    <iconify-icon icon="solar:check-bold"></iconify-icon>
+                                    &#10003;
+                                @elseif ($number === $currentStep)
+                                    &#10003;
                                 @else
-                                    {{ $number }}
                                 @endif
                             </span>
+                            <span class="mini-number">{{ $number }}</span>
                             {{ $label }}
                         </li>
                     @endforeach

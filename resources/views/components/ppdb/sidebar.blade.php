@@ -2,20 +2,18 @@
 
 @php
     $items = [
-        ['key' => 'dashboard', 'label' => 'Dashboard', 'route' => 'ppdb.dashboard', 'icon' => 'solar:home-2-bold'],
-        ['key' => 'form', 'label' => 'Form Pendaftaran', 'route' => 'ppdb.form', 'icon' => 'solar:document-add-outline'],
-        ['key' => 'dokumen', 'label' => 'Dokumen', 'route' => 'ppdb.documents', 'icon' => 'solar:folder-with-files-outline'],
-        ['key' => 'jadwal', 'label' => 'Jadwal', 'route' => 'ppdb.schedule', 'icon' => 'solar:calendar-date-outline'],
-        ['key' => 'pengumuman', 'label' => 'Pengumuman', 'route' => 'ppdb.announcements', 'icon' => 'solar:megaphone-outline'],
-        ['key' => 'pengaturan', 'label' => 'Pengaturan', 'route' => 'ppdb.settings', 'icon' => 'solar:settings-outline'],
+        ['key' => 'dashboard', 'label' => 'Dashboard', 'route' => 'ppdb.dashboard', 'icon' => 'heroicons:home'],
+        ['key' => 'form', 'label' => 'Form Pendaftaran', 'route' => 'ppdb.form', 'icon' => 'heroicons:document-text'],
+        ['key' => 'dokumen', 'label' => 'Dokumen', 'route' => 'ppdb.documents', 'icon' => 'heroicons:folder'],
+        ['key' => 'jadwal', 'label' => 'Jadwal', 'route' => 'ppdb.schedule', 'icon' => 'heroicons:calendar-days'],
+        ['key' => 'pengumuman', 'label' => 'Pengumuman', 'route' => 'ppdb.announcements', 'icon' => 'heroicons:megaphone'],
+        ['key' => 'pengaturan', 'label' => 'Pengaturan', 'route' => 'ppdb.settings', 'icon' => 'heroicons:cog-6-tooth'],
     ];
 @endphp
 
 <aside class="sidebar">
     <div class="brand-block">
-        <div class="brand-logo">
-            <span>AS</span>
-        </div>
+        <img class="brand-logo" src="{{ asset('assets/images/logo_al-azhar.png') }}" alt="Logo Al Azhar Syifa Budi Parahyangan">
         <div>
             <strong>Al Azhar Syifa Budi</strong>
             <span>Parahyangan</span>
@@ -33,7 +31,7 @@
 
     <div class="logout-wrap">
         <a href="{{ route('ppdb.logout') }}" class="nav-link {{ $active === 'logout' ? 'is-active' : '' }}">
-            <iconify-icon icon="solar:logout-3-outline"></iconify-icon>
+            <iconify-icon icon="heroicons:arrow-left-on-rectangle"></iconify-icon>
             <span>Keluar</span>
         </a>
     </div>
@@ -43,6 +41,6 @@
         <strong>Membentuk Generasi</strong>
         <p>Cerdas, Berakhlak,</p>
         <p>dan Berprestasi.</p>
-        <div class="mosque-line"><iconify-icon icon="mdi:mosque-outline"></iconify-icon></div>
+        <div class="mosque-line"><iconify-icon icon="hugeicons:mosque-01"></iconify-icon></div>
     </div>
 </aside>

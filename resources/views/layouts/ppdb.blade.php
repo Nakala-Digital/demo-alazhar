@@ -28,11 +28,6 @@
                             <span>{{ $pageDescription }}</span>
                         @endif
                     </div>
-                    <nav aria-label="Breadcrumb">
-                        <a href="{{ route('ppdb.dashboard') }}">Dashboard</a>
-                        <iconify-icon icon="solar:alt-arrow-right-linear"></iconify-icon>
-                        <strong>{{ $pageTitle }}</strong>
-                    </nav>
                 </div>
 
                 @yield('content')
