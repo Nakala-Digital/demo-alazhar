@@ -16,17 +16,12 @@ app('router')->aliasMiddleware('guest_guard', function (Request $request, Closur
 
 app('router')->aliasMiddleware('parent_guard', function (Request $request, Closure $next) {
     // TEMPORARY BYPASS FOR UI DEVELOPMENT
-    if (!$request->session()->get('ppdb_auth')) {
-        session([
-            'ppdb_auth' => true,
-            'ppdb_role' => 'parent',
-            'ppdb_user' => ['name' => 'Ahmad Fauzi', 'email' => 'ahmad@example.com'],
-        ]);
-    }
+    session([
+        'ppdb_auth' => true,
+        'ppdb_role' => 'parent',
+        'ppdb_user' => ['name' => 'Ahmad Fauzi', 'email' => 'ahmad@example.com'],
+    ]);
     
-    if ($request->session()->get('ppdb_role') !== 'parent') {
-        return redirect()->route('admin.dashboard');
-    }
     return $next($request);
 });
 
@@ -188,6 +183,7 @@ Route::middleware(['parent_guard'])->group(function () {
     Route::get('/jadwal', fn () => view('jadwal.index', [
         'pageTitle' => 'Jadwal',
         'active' => 'jadwal',
+        'bodyClass' => 'status-registration-page',
         'pageDescription' => 'Pantau jadwal seleksi, verifikasi berkas, observasi, dan pengumuman.',
     ]))->name('ppdb.schedule');
 
