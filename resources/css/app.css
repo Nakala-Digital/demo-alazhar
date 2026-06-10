@@ -6784,20 +6784,15 @@ body .sidebar .sidebar-message strong {
         height: 100% !important;
         min-height: 0 !important;
         display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
         align-items: center !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        padding-top: 24px !important;
-        padding-bottom: 24px !important;
+        justify-content: center !important;
+        overflow: hidden !important;
     }
 
     .login-page .login-card-outer,
     .register-page .register-card-outer,
     .login-page .auth-card-outer {
-        margin-top: auto !important;
-        margin-bottom: auto !important;
+        margin: auto !important;
     }
 
     .login-page .login-card,
@@ -6902,5 +6897,86 @@ body .sidebar .sidebar-message strong {
         left: 28px !important;
         min-height: 36px !important;
         padding: 6px 12px !important;
+    }
+
+    /* KOMPRESI EKSTREM FORM KANAN AGAR MUAT TANPA SCROLLBAR */
+    .login-page .login-card-outer,
+    .register-page .register-card-outer,
+    .login-page .auth-card-outer {
+        padding: 10px !important;
+    }
+
+    .login-page .login-card,
+    .register-page .register-card {
+        padding: 16px 22px 14px !important;
+    }
+
+    .login-page .login-heading h2,
+    .register-page .register-heading h2 {
+        font-size: 22px !important;
+        margin-bottom: 2px !important;
+    }
+
+    .login-page .login-heading p,
+    .register-page .register-heading p {
+        font-size: 11.5px !important;
+        margin-top: 4px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 8px !important;
+    }
+
+    .login-page .role-tabs,
+    .register-page .role-tabs {
+        margin: 10px 0 10px !important;
+    }
+
+    .login-page .role-tab,
+    .register-page .role-tab {
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+    }
+
+    .login-page .field-label,
+    .register-page .field-label {
+        margin-bottom: 4px !important;
+        font-size: 11.5px !important;
+    }
+
+    .login-page .input-wrap,
+    .register-page .input-wrap {
+        height: 38px !important;
+        min-height: 38px !important;
+    }
+
+    .login-page .field-wrap,
+    .register-page .field-wrap {
+        margin-bottom: 10px !important;
+    }
+
+    .login-page .button,
+    .register-page .button {
+        min-height: 38px !important;
+        font-size: 13px !important;
+    }
+
+    .login-page .button--outline,
+    .register-page .button--outline {
+        margin-top: 6px !important;
+    }
+
+    .login-page .form-options {
+        margin-top: 10px !important;
+        margin-bottom: 14px !important;
+    }
+
+    .login-page .form-divider {
+        margin: 10px 0 !important;
+    }
+
+    .login-page .status-button {
+        min-height: 38px !important;
+        margin-top: 10px !important;
+        padding: 8px 14px !important;
+        font-size: 13px !important;
     }
 }
