@@ -1405,7 +1405,7 @@ iconify-icon {
 
 .main-shell {
     min-width: 0;
-    width: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
@@ -2298,6 +2298,12 @@ iconify-icon {
     width: auto;
 }
 
+.status-registration-page .main-content {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
 .status-dashboard {
     width: 100%;
     max-width: none;
@@ -2306,7 +2312,7 @@ iconify-icon {
 
 .status-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 402px);
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     gap: 18px;
 }
 
@@ -2331,7 +2337,7 @@ iconify-icon {
 .status-welcome {
     min-height: 156px;
     display: grid;
-    grid-template-columns: 100px minmax(340px, 1.2fr) minmax(220px, 1fr) auto;
+    grid-template-columns: 100px minmax(0, 1.2fr) minmax(0, 1fr) auto;
     align-items: center;
     gap: 24px;
     padding: 22px 28px;
@@ -2635,7 +2641,7 @@ iconify-icon {
 
 .status-content-grid {
     display: grid;
-    grid-template-columns: minmax(260px, 1fr) minmax(300px, 1.12fr) minmax(260px, .92fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr) minmax(0, .92fr);
     gap: 16px;
 }
 
@@ -3420,9 +3426,7 @@ iconify-icon {
     height: clamp(162px, 16vh, 196px);
 }
 
-.status-registration-page .main-shell,
 .status-registration-page .topbar,
-.status-registration-page .main-content,
 .status-registration-page .page-content {
     width: auto;
 }
@@ -3441,14 +3445,14 @@ iconify-icon {
 
 .status-registration-page .status-layout {
     width: 100%;
-    grid-template-columns: minmax(0, 1fr) clamp(280px, 24vw, 402px);
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     gap: clamp(12px, 1.1vw, 18px);
 }
 
 .status-registration-page .status-welcome {
     height: auto;
     min-height: 0;
-    grid-template-columns: clamp(76px, 6vw, 118px) minmax(260px, 1fr) minmax(220px, 318px) auto;
+    grid-template-columns: clamp(76px, 6vw, 118px) minmax(0, 1.2fr) minmax(0, 1fr) auto;
     gap: clamp(14px, 1.4vw, 24px);
     padding: clamp(16px, 1.4vw, 22px) clamp(18px, 1.8vw, 28px);
 }
@@ -3456,7 +3460,7 @@ iconify-icon {
 .status-registration-page .process-summary {
     height: auto;
     min-height: 0;
-    grid-template-columns: clamp(64px, 5vw, 84px) minmax(190px, 246px) minmax(0, 1fr);
+    grid-template-columns: clamp(64px, 5vw, 84px) minmax(0, 246px) minmax(0, 1fr);
     gap: clamp(14px, 1.25vw, 22px);
     padding: clamp(16px, 1.5vw, 22px) clamp(18px, 1.9vw, 30px);
 }
