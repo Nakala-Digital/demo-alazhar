@@ -45,7 +45,7 @@
         <p>Cerdas, Berakhlak,</p>
         <p>dan Berprestasi.</p>
         <div class="mosque-line" aria-hidden="true">
-            <img src="{{ asset('assets/status-pendaptaran/sidebar-mosque.png') }}" alt="">
+            <img src="{{ asset('assets/shiluate alazhar.png') }}" alt="Siluet Al Azhar">
         </div>
     </div>
 </aside>
