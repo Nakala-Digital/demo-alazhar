@@ -190,6 +190,7 @@ Route::middleware(['parent_guard'])->group(function () {
     Route::get('/pengumuman', fn () => view('pengumuman.index', [
         'pageTitle' => 'Pengumuman',
         'active' => 'pengumuman',
+        'bodyClass' => 'status-registration-page',
         'pageDescription' => 'Informasi resmi seputar status pendaftaran dan hasil seleksi.',
     ]))->name('ppdb.announcements');
 
