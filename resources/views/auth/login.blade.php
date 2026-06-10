@@ -74,8 +74,8 @@
             </section>
 
             <section class="login-panel">
-                <div class="w-full max-w-[660px] mx-auto p-4 sm:p-6 lg:p-7 bg-slate-50/70 border border-slate-100/50 rounded-[32px] shadow-[0_8px_30px_rgba(0,0,0,0.02)]">
-                    <div class="login-card !m-0 !max-w-none !shadow-[0_8px_24px_rgba(11,35,74,0.04)]">
+                <div class="auth-card-outer login-card-outer">
+                    <div class="login-card">
                         <div class="login-heading">
                         <h2>Masuk ke Portal PPDB</h2>
                         <p>Akses portal pendaftaran untuk melanjutkan<br>proses penerimaan peserta didik baru.</p>

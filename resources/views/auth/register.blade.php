@@ -74,8 +74,8 @@
             </section>
 
             <section class="login-panel register-panel">
-                <div class="w-full max-w-[800px] mx-auto p-4 sm:p-6 lg:p-7 bg-slate-50/70 border border-slate-100/50 rounded-[32px] shadow-[0_8px_30px_rgba(0,0,0,0.02)]">
-                    <div class="login-card register-card !m-0 !max-w-none !shadow-[0_8px_24px_rgba(11,35,74,0.04)]">
+                <div class="auth-card-outer register-card-outer">
+                    <div class="login-card register-card">
                         <div class="login-heading register-heading">
                         <h2>Daftar Akun Baru</h2>
                         <p>Lengkapi data berikut untuk membuat akun orang tua / wali.</p>
