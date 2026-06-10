@@ -15,9 +15,15 @@ app('router')->aliasMiddleware('guest_guard', function (Request $request, Closur
 });
 
 app('router')->aliasMiddleware('parent_guard', function (Request $request, Closure $next) {
+    // TEMPORARY BYPASS FOR UI DEVELOPMENT
     if (!$request->session()->get('ppdb_auth')) {
-        return redirect()->route('login');
+        session([
+            'ppdb_auth' => true,
+            'ppdb_role' => 'parent',
+            'ppdb_user' => ['name' => 'Ahmad Fauzi', 'email' => 'ahmad@example.com'],
+        ]);
     }
+    
     if ($request->session()->get('ppdb_role') !== 'parent') {
         return redirect()->route('admin.dashboard');
     }

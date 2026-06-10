@@ -2,13 +2,13 @@
 
 @php
     $items = [
-        ['key' => 'dashboard', 'label' => 'Dashboard', 'route' => 'ppdb.dashboard', 'icon' => 'solar:home-2-bold'],
-        ['key' => 'form', 'label' => 'Form Pendaftaran', 'route' => 'ppdb.form', 'icon' => 'solar:document-add-outline'],
-        ['key' => 'dokumen', 'label' => 'Dokumen', 'route' => 'ppdb.documents', 'icon' => 'solar:folder-with-files-outline'],
-        ['key' => 'status', 'label' => 'Status Pendaftaran', 'route' => 'ppdb.status', 'icon' => 'solar:clipboard-check-outline'],
-        ['key' => 'jadwal', 'label' => 'Jadwal', 'route' => 'ppdb.schedule', 'icon' => 'solar:calendar-date-outline'],
-        ['key' => 'pengumuman', 'label' => 'Pengumuman', 'route' => 'ppdb.announcements', 'icon' => 'solar:megaphone-outline'],
-        ['key' => 'pengaturan', 'label' => 'Pengaturan', 'route' => 'ppdb.settings', 'icon' => 'solar:settings-outline'],
+        ['key' => 'dashboard', 'label' => 'Dashboard', 'route' => 'ppdb.dashboard', 'icon' => 'la:home'],
+        ['key' => 'form', 'label' => 'Form Pendaftaran', 'route' => 'ppdb.form', 'icon' => 'mi:document'],
+        ['key' => 'dokumen', 'label' => 'Dokumen', 'route' => 'ppdb.documents', 'icon' => 'iconoir:folder'],
+        ['key' => 'status', 'label' => 'Status Pendaftaran', 'route' => 'ppdb.status', 'icon' => 'carbon:report'],
+        ['key' => 'jadwal', 'label' => 'Jadwal', 'route' => 'ppdb.schedule', 'icon' => 'uiw:date'],
+        ['key' => 'pengumuman', 'label' => 'Pengumuman', 'route' => 'ppdb.announcements', 'icon' => 'mdi:announcement-outline'],
+        ['key' => 'pengaturan', 'label' => 'Pengaturan', 'route' => 'ppdb.settings', 'icon' => 'ep:setting'],
     ];
 @endphp
 
@@ -39,7 +39,7 @@
 
     <div class="logout-wrap">
         <a href="{{ route('ppdb.logout') }}" class="nav-link {{ $active === 'logout' ? 'is-active' : '' }}">
-            <iconify-icon icon="solar:logout-3-outline"></iconify-icon>
+            <iconify-icon icon="line-md:log-out"></iconify-icon>
             <span>Keluar</span>
         </a>
     </div>
@@ -50,7 +50,7 @@
         <p>Cerdas, Berakhlak,</p>
         <p>dan Berprestasi.</p>
         <div class="mosque-line" aria-hidden="true">
-            <img src="{{ asset('assets/status-pendaptaran/sidebar-mosque.png') }}" alt="">
+            <img src="{{ asset('assets/shiluate alazhar.png') }}" alt="Siluet Al Azhar">
         </div>
     </div>
 </aside>
