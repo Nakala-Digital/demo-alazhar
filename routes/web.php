@@ -216,4 +216,8 @@ Route::middleware(['admin_guard'])->group(function () {
             'announcements' => \App\Support\PpdbDummyData::announcements(),
         ]);
     })->name('admin.dashboard');
+
+    Route::get('/admin/verifikasi-berkas', function () {
+        return view('admin.verifikasi-berkas.index');
+    })->name('admin.verifikasi.index');
 });
