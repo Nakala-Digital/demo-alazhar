@@ -173,6 +173,7 @@ Route::middleware(['parent_guard'])->group(function () {
     Route::get('/dokumen', fn () => view('dokumen.index', [
         'pageTitle' => 'Dokumen',
         'active' => 'dokumen',
+        'bodyClass' => 'documents-page',
         'pageDescription' => 'Unggah dan kelola dokumen persyaratan pendaftaran siswa.',
     ]))->name('ppdb.documents');
 

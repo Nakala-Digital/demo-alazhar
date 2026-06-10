@@ -3510,6 +3510,49 @@ iconify-icon {
     margin: 0;
 }
 
+.parent-dashboard-page,
+.form-registration-page,
+.documents-page {
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+.parent-dashboard-page .main-shell,
+.parent-dashboard-page .topbar,
+.parent-dashboard-page .main-content,
+.form-registration-page .main-shell,
+.form-registration-page .topbar,
+.form-registration-page .main-content,
+.documents-page .main-shell,
+.documents-page .topbar,
+.documents-page .main-content {
+    width: auto;
+}
+
+.parent-dashboard-page .main-content,
+.form-registration-page .main-content,
+.documents-page .main-content {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: clamp(14px, 1.25vw, 20px);
+}
+
+.parent-dashboard-page .fin-main-inner,
+.form-registration-page .fin-main-inner,
+.documents-page .fin-main-inner {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.parent-dashboard-page .footerbar,
+.form-registration-page .footerbar,
+.documents-page .footerbar {
+    position: static;
+    width: auto;
+}
+
 .status-layout {
     display: grid;
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
@@ -6515,4 +6558,28 @@ body .sidebar .sidebar-message strong {
     object-position: center;
     mix-blend-mode: normal;
     filter: none;
+}
+
+@media (min-width: 1181px) {
+    .documents-page .content-grid,
+    .form-registration-page .form-registration-grid {
+        grid-template-columns: minmax(0, 1fr) 330px;
+    }
+
+    .documents-page .side-stack,
+    .form-registration-page .side-stack {
+        position: sticky;
+        top: 24px;
+        grid-template-columns: 1fr;
+    }
+
+    .parent-dashboard-page .dashboard-layout {
+        grid-template-columns: minmax(0, 1fr) 330px;
+    }
+
+    .parent-dashboard-page .dashboard-side-column {
+        position: sticky;
+        top: 18px;
+        grid-template-columns: 1fr;
+    }
 }
