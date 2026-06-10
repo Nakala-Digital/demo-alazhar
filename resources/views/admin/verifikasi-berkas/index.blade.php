@@ -188,8 +188,9 @@
                 <button type="button">Catatan</button>
             </div>
             
-            <div class="v-doc-list-head">
-                <span>Dokumen</span>
+            <div class="v-doc-table-wrap">
+                <div class="v-doc-list-head">
+                    <span>Dokumen</span>
                 <span>Status</span>
                 <span>Catatan</span>
                 <span class="text-right">Aksi</span>
@@ -298,6 +299,7 @@
                     <div class="v-doc-actions">
                         <!-- No actions -->
                     </div>
+                </div>
                 </div>
             </div>
             

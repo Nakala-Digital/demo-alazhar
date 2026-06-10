@@ -7269,3 +7269,696 @@ body .sidebar .sidebar-message strong {
         padding: 18px 20px !important;
     }
 }
+
+/* Final admin dashboard responsive override. */
+@media (max-width: 1180px) {
+    .admin-page {
+        overflow-x: hidden !important;
+    }
+
+    .admin-sidebar {
+        width: min(290px, 86vw) !important;
+        max-width: 100% !important;
+        transform: translateX(-105%) !important;
+        transition: transform .22s ease !important;
+    }
+
+    .admin-page.admin-sidebar-open .admin-sidebar {
+        transform: translateX(0) !important;
+    }
+
+    .admin-sidebar-backdrop {
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: 25 !important;
+        border: 0 !important;
+        background: rgb(2 20 52 / 55%) !important;
+    }
+
+    .admin-page.admin-sidebar-open .admin-sidebar-backdrop {
+        display: block !important;
+    }
+
+    .admin-main {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    .admin-topbar {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 20 !important;
+        min-height: 76px !important;
+        padding: 12px 18px !important;
+        gap: 12px !important;
+    }
+
+    .admin-top-actions {
+        gap: 8px !important;
+    }
+
+    .admin-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        padding: 20px 18px 28px !important;
+        overflow: visible !important;
+    }
+
+    .admin-summary-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+        gap: 12px !important;
+    }
+
+    .admin-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 14px !important;
+    }
+
+    .admin-line-card {
+        grid-column: 1 / -1 !important;
+    }
+
+    .admin-bottom-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 14px !important;
+    }
+
+    .admin-table-card {
+        grid-column: 1 / -1 !important;
+    }
+
+    .admin-card,
+    .admin-summary-card {
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .admin-topbar {
+        align-items: flex-start !important;
+    }
+
+    .admin-page-title {
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+    }
+
+    .admin-page-title h1 {
+        font-size: 18px !important;
+        line-height: 1.25 !important;
+    }
+
+    .admin-page-title p {
+        max-width: 52ch !important;
+        white-space: normal !important;
+        line-height: 1.45 !important;
+    }
+
+    .admin-top-user {
+        display: none !important;
+    }
+
+    .admin-summary-card {
+        min-height: 100px !important;
+    }
+
+    .admin-summary-card small {
+        white-space: normal !important;
+        line-height: 1.35 !important;
+    }
+
+    .admin-stat-grid,
+    .admin-bottom-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .admin-line-card,
+    .admin-table-card {
+        grid-column: auto !important;
+    }
+
+    .admin-line-card {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+    }
+
+    .admin-line-chart {
+        min-width: 560px !important;
+        height: 230px !important;
+    }
+
+    .admin-donut-body {
+        grid-template-columns: minmax(130px, 170px) minmax(0, 1fr) !important;
+        min-height: 0 !important;
+    }
+
+    .admin-bottom-grid > .admin-card {
+        min-height: 0 !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .admin-topbar {
+        min-height: 68px !important;
+        padding: 10px 12px !important;
+        align-items: center !important;
+    }
+
+    .admin-menu-button {
+        width: 38px !important;
+        height: 38px !important;
+        flex: 0 0 auto !important;
+    }
+
+    .admin-menu-button svg {
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    .admin-page-title h1 {
+        font-size: 16px !important;
+    }
+
+    .admin-page-title p {
+        display: none !important;
+    }
+
+    .admin-year {
+        width: 40px !important;
+        min-width: 40px !important;
+        height: 40px !important;
+        padding: 0 !important;
+        justify-content: center !important;
+    }
+
+    .admin-year span,
+    .admin-year > svg:last-child,
+    .admin-icon-button:nth-of-type(3),
+    .admin-top-user {
+        display: none !important;
+    }
+
+    .admin-icon-button {
+        width: 38px !important;
+        height: 40px !important;
+        border-left: 0 !important;
+    }
+
+    .admin-icon-button svg {
+        width: 21px !important;
+        height: 21px !important;
+    }
+
+    .admin-content {
+        padding: 14px 10px 22px !important;
+    }
+
+    .admin-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+    }
+
+    .admin-summary-card {
+        min-height: 96px !important;
+        align-items: flex-start !important;
+        padding: 13px 12px !important;
+    }
+
+    .admin-summary-card strong {
+        font-size: 21px !important;
+    }
+
+    .admin-summary-card > svg {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .admin-card {
+        border-radius: 8px !important;
+    }
+
+    .admin-card-head {
+        align-items: flex-start !important;
+        flex-wrap: wrap !important;
+    }
+
+    .admin-line-card,
+    .admin-donut-card,
+    .admin-bottom-grid > .admin-card {
+        padding: 15px 12px !important;
+    }
+
+    .admin-chart-legend {
+        flex-wrap: wrap !important;
+        gap: 9px 14px !important;
+    }
+
+    .admin-donut-body {
+        grid-template-columns: 1fr !important;
+        justify-items: center !important;
+        gap: 14px !important;
+    }
+
+    .admin-donut {
+        width: 150px !important;
+    }
+
+    .admin-donut-legend {
+        width: min(260px, 100%) !important;
+        justify-self: stretch !important;
+    }
+
+    .admin-table-wrap {
+        margin-inline: -12px !important;
+        padding-bottom: 6px !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .admin-table-card table {
+        min-width: 620px !important;
+        font-size: 10px !important;
+    }
+
+    .admin-table-card th,
+    .admin-table-card td {
+        padding-block: 11px !important;
+    }
+
+    .admin-activity-item {
+        grid-template-columns: 28px minmax(0, 1fr) !important;
+    }
+
+    .admin-activity-item time {
+        grid-column: 2 !important;
+        justify-self: start !important;
+        margin-top: -4px !important;
+    }
+
+    .admin-announcement-card .admin-card-head {
+        gap: 10px !important;
+    }
+
+    .admin-create-button {
+        width: 100% !important;
+        justify-content: center !important;
+        min-height: 36px !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .admin-summary-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .admin-summary-card {
+        min-height: 88px !important;
+    }
+
+    .admin-top-actions {
+        gap: 2px !important;
+    }
+
+    .admin-content {
+        padding-inline: 8px !important;
+    }
+
+    .admin-footer {
+        padding: 14px 12px !important;
+        text-align: center !important;
+        line-height: 1.5 !important;
+    }
+}
+
+/* Final verifikasi berkas responsive override. */
+@media (max-width: 1180px) {
+    .v-summary-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+        gap: 12px !important;
+    }
+
+    .v-filter-bar {
+        flex-wrap: wrap !important;
+        align-items: flex-end !important;
+        gap: 12px !important;
+    }
+
+    .v-search-box {
+        flex: 1 1 280px !important;
+        min-width: 0 !important;
+    }
+
+    .v-filter-group {
+        flex: 1 1 100% !important;
+        min-width: 0 !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+
+    .v-filter-item {
+        flex: 1 1 170px !important;
+        min-width: 0 !important;
+    }
+
+    .btn-export {
+        margin-left: 0 !important;
+    }
+
+    .v-main-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 16px !important;
+    }
+
+    .v-table-card,
+    .v-detail-card {
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .v-detail-card {
+        overflow: hidden !important;
+    }
+
+    .v-doc-list {
+        max-height: none !important;
+    }
+}
+
+@media (max-width: 760px) {
+    .v-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+    }
+
+    .v-summary-card {
+        min-width: 0 !important;
+        padding: 14px 12px !important;
+        gap: 10px !important;
+    }
+
+    .v-summary-icon {
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 21px !important;
+    }
+
+    .v-summary-info {
+        min-width: 0 !important;
+    }
+
+    .v-summary-info span,
+    .v-summary-info small {
+        white-space: normal !important;
+        line-height: 1.3 !important;
+    }
+
+    .v-filter-bar {
+        padding: 14px !important;
+    }
+
+    .v-search-box,
+    .v-filter-group,
+    .v-filter-item,
+    .v-btn-outline,
+    .btn-export {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+
+    .v-search-box input,
+    .v-filter-item select,
+    .v-btn-outline {
+        min-width: 0 !important;
+    }
+
+    .v-table-wrap {
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .v-table-wrap table {
+        min-width: 760px !important;
+    }
+
+    .v-doc-table-wrap {
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .v-doc-list-head,
+    .v-doc-list {
+        min-width: 680px !important;
+    }
+
+    .v-pagination {
+        align-items: flex-start !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        padding: 14px !important;
+    }
+
+    .v-page-links {
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        padding-bottom: 2px !important;
+    }
+
+    .v-detail-title {
+        align-items: flex-start !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        padding-right: 32px !important;
+    }
+
+    .v-detail-title h2 {
+        max-width: 100% !important;
+        font-size: 17px !important;
+        line-height: 1.25 !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .v-detail-sub {
+        line-height: 1.45 !important;
+    }
+
+    .v-detail-tabs {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: 0 16px !important;
+    }
+
+    .v-detail-tabs button {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+    }
+
+    .v-doc-list {
+        padding-inline: 16px !important;
+    }
+
+    .v-detail-footer {
+        padding: 16px !important;
+    }
+
+    .v-action-buttons {
+        flex-wrap: wrap !important;
+        justify-content: stretch !important;
+    }
+
+    .v-action-buttons .v-btn-red,
+    .v-action-buttons .v-btn-green {
+        flex: 1 1 150px !important;
+        justify-content: center !important;
+        min-height: 42px !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .v-summary-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .v-summary-card {
+        min-height: 92px !important;
+    }
+
+    .v-filter-bar,
+    .v-table-card,
+    .v-detail-card {
+        border-radius: 10px !important;
+    }
+
+    .v-detail-header {
+        padding: 18px 16px 14px !important;
+    }
+
+    .v-detail-title {
+        padding-right: 28px !important;
+    }
+
+    .v-detail-title .v-badge {
+        align-self: flex-start !important;
+    }
+
+    .v-detail-sub {
+        max-width: 100% !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .v-detail-tabs {
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 0 !important;
+        overflow: visible !important;
+        padding: 0 8px !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+    }
+
+    .v-detail-tabs button {
+        min-width: 0 !important;
+        width: 100% !important;
+        justify-content: center !important;
+        min-height: 48px !important;
+        padding: 8px 4px !important;
+        white-space: normal !important;
+        text-align: center !important;
+        font-size: 12px !important;
+        line-height: 1.15 !important;
+    }
+
+    .v-detail-tabs button.active {
+        border-bottom-width: 2px !important;
+    }
+
+    .v-tab-badge {
+        flex: 0 0 auto !important;
+    }
+
+    .v-table-wrap table {
+        min-width: 700px !important;
+    }
+
+    .v-action-buttons {
+        flex-direction: column !important;
+    }
+
+    .v-action-buttons .v-btn-red,
+    .v-action-buttons .v-btn-green {
+        width: 100% !important;
+        flex-basis: auto !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .v-detail-tabs {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .v-doc-item {
+        grid-template-columns: 40px minmax(0, 1fr) !important;
+    }
+
+    .v-doc-status {
+        grid-column: 2 !important;
+        grid-row: auto !important;
+        justify-self: start !important;
+        max-width: 100% !important;
+    }
+
+    .v-doc-note,
+    .v-doc-actions {
+        grid-column: 1 / -1 !important;
+    }
+}
+
+/* Keep the document verification area as a table on small screens. */
+@media (max-width: 760px) {
+    .v-detail-card {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .v-doc-list-head {
+        display: grid !important;
+        grid-template-columns: minmax(190px, 1.45fr) 120px minmax(180px, 1fr) 96px !important;
+        min-width: 640px !important;
+        padding: 12px 16px !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        background: #fff !important;
+        font-size: 12px !important;
+    }
+
+    .v-doc-list {
+        min-width: 640px !important;
+        padding: 0 16px !important;
+        overflow: visible !important;
+    }
+
+    .v-doc-item {
+        display: grid !important;
+        grid-template-columns: minmax(174px, 1.45fr) 120px minmax(180px, 1fr) 80px !important;
+        min-width: 608px !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 13px 0 !important;
+    }
+
+    .v-doc-info {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        min-width: 0 !important;
+    }
+
+    .v-doc-icon {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .v-doc-info > div:not(.v-doc-icon) {
+        grid-column: auto !important;
+        min-width: 0 !important;
+    }
+
+    .v-doc-info strong,
+    .v-doc-info small {
+        overflow-wrap: anywhere !important;
+    }
+
+    .v-doc-status {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        justify-self: start !important;
+        align-self: center !important;
+        max-width: none !important;
+        text-align: left !important;
+    }
+
+    .v-doc-note {
+        grid-column: auto !important;
+        margin-top: 0 !important;
+        padding-right: 8px !important;
+        font-size: 12px !important;
+    }
+
+    .v-doc-actions {
+        grid-column: auto !important;
+        justify-content: flex-end !important;
+        gap: 6px !important;
+        margin-top: 0 !important;
+    }
+
+    .v-doc-actions .v-btn-icon {
+        width: 32px !important;
+        height: 32px !important;
+    }
+}
+
