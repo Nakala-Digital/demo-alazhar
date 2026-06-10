@@ -799,13 +799,13 @@ a { color: inherit; }
     .topbar { padding-inline: 24px; }
     .header-support { gap: 20px; }
     .auth-shell { grid-template-columns: 53% 47%; }
-    .hero-content { width: calc(100% - 100px); margin-left: 60px; }
-    .hero-wordmark { width: min(430px, 94%); }
-    .hero-copy h1 { font-size: 43px; }
+    .hero-content { width: calc(100% - 60px); margin-left: 40px; }
+    .hero-wordmark { width: min(340px, 94%); }
+    .hero-copy h1 { font-size: 34px; margin-bottom: 12px; }
     .login-panel { padding: 24px; }
     .info-footer { padding-inline: 25px; gap: 15px; }
     .register-shell { grid-template-columns: 51% 49%; }
-    .register-hero-content { width: calc(100% - 75px); margin-left: 40px; }
+    .register-hero-content { width: calc(100% - 60px); margin-left: 30px; }
     .register-card, .register-info-box { max-width: 650px; }
     .register-grid { gap-inline: 14px; }
 }
@@ -6757,11 +6757,11 @@ body .sidebar .sidebar-message strong {
     }
 
     .login-page .auth-shell {
-        grid-template-columns: minmax(0, 56.5%) minmax(520px, 43.5%) !important;
+        grid-template-columns: minmax(0, 56.5%) minmax(460px, 43.5%) !important;
     }
 
     .register-page .auth-shell {
-        grid-template-columns: minmax(0, 49%) minmax(620px, 51%) !important;
+        grid-template-columns: minmax(0, 49%) minmax(500px, 51%) !important;
     }
 
     .login-page .hero-panel,
