@@ -15,6 +15,7 @@
 </head>
 <body class="{{ $bodyClass ?? '' }}">
     <div class="app-shell">
+        <div class="sidebar-backdrop" data-sidebar-toggle></div>
         <x-ppdb.sidebar :active="$active" />
 
         <div class="main-shell">

@@ -3,7 +3,12 @@
 @endphp
 
 <header class="topbar">
-    <div class="portal-title"><span></span>PPDB Portal 2026/2027</div>
+    <div class="portal-title">
+        <button type="button" class="sidebar-toggle" data-sidebar-toggle aria-label="Toggle Sidebar">
+            <iconify-icon icon="heroicons:bars-3"></iconify-icon>
+        </button>
+        <span></span>PPDB Portal 2026/2027
+    </div>
     <div class="topbar-meta">
         <div class="meta-item">
             <iconify-icon icon="logos:whatsapp-icon"></iconify-icon>

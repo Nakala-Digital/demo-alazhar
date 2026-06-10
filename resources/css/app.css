@@ -5245,7 +5245,7 @@ iconify-icon {
 
 @media (max-width: 1400px) {
     .content-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .side-stack {
@@ -5258,7 +5258,7 @@ iconify-icon {
     }
 
     .status-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .status-sidebar {
@@ -5295,26 +5295,67 @@ iconify-icon {
     .topbar {
         position: relative;
         flex-wrap: wrap;
-        padding: 20px 24px;
+        padding: 14px 20px;
+    }
+
+    .topbar-meta {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+        margin-top: 14px;
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        background: #f8fafc;
+        padding: 8px 12px;
+        border-radius: 10px;
+        border: 1px solid #e1e8f1;
+        gap: 8px;
+    }
+
+    .meta-item iconify-icon {
+        font-size: 24px;
+    }
+
+    .meta-item span {
+        display: none;
+    }
+
+    .meta-item strong {
+        font-size: 12px;
+    }
+
+    .profile-menu {
+        grid-column: 1 / -1;
+    }
+
+    .profile-pill {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .document-list {
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        padding-bottom: 8px;
     }
 
     .document-row {
         grid-template-columns: 34px minmax(180px, 1fr) minmax(230px, 1fr) minmax(80px, .45fr) minmax(112px, .55fr) 82px;
     }
 
-    .doc-note {
-        grid-column: 3 / 4;
-    }
-
     .side-stack,
     .footerbar {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .status-welcome,
     .process-summary,
     .status-content-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .student-select,
@@ -5346,15 +5387,15 @@ iconify-icon {
     }
 
     .side-nav {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
-    .topbar-meta,
     .panel-head,
     .page-header {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         width: 100%;
+        gap: 12px;
     }
 
     .profile-pill {
@@ -5377,28 +5418,17 @@ iconify-icon {
         text-align: center;
     }
 
-    .document-row {
-        grid-template-columns: 30px 1fr;
-        align-items: start;
-        gap: 12px;
-    }
 
-    .doc-name,
-    .file-cell,
-    .doc-type,
-    .status-badge,
-    .doc-actions,
-    .doc-note {
-        grid-column: 2 / 3;
-    }
-
-    .file-cell {
-        width: 100%;
-    }
 
     .form-actions {
         overflow-x: auto;
         padding-bottom: 4px;
+        flex-wrap: nowrap;
+    }
+
+    .form-actions .btn {
+        width: auto;
+        flex: 0 0 auto;
     }
 
     .footerbar {
@@ -5411,7 +5441,7 @@ iconify-icon {
     }
 
     .status-sidebar {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .status-welcome,
@@ -5686,9 +5716,17 @@ iconify-icon {
     .status-registration-page .topbar {
         position: relative;
         flex-wrap: wrap;
+        padding: 14px 16px;
     }
 
-    .status-registration-page .status-welcome,
+
+
+    .status-registration-page .status-welcome {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
     .status-registration-page .process-summary,
     .status-registration-page .status-content-grid,
     .status-registration-page .status-sidebar {
@@ -6673,11 +6711,24 @@ iconify-icon {
 
     .form-registration-page .photo-upload-card {
         max-width: 220px;
+        margin: 0 auto;
+    }
+
+    .form-registration-page .registration-form-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
     }
 
     .form-registration-page .registration-actions {
-        overflow-x: auto;
-        padding-bottom: 4px;
+        flex-wrap: wrap;
+        justify-content: stretch;
+    }
+
+    .form-registration-page .registration-actions .btn {
+        width: 100%;
+        min-width: 0;
+        flex: 1 1 100%;
     }
 }
 
@@ -7962,3 +8013,72 @@ body .sidebar .sidebar-message strong {
     }
 }
 
+/* Mobile Sidebar Toggle styling */
+.sidebar-toggle,
+.sidebar-close,
+.sidebar-backdrop {
+    display: none;
+}
+
+.sidebar-toggle {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font-size: 26px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.sidebar-close {
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10;
+    line-height: 1;
+}
+
+@media (max-width: 1120px) {
+    .sidebar-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .sidebar-close {
+        display: block;
+    }
+
+    .app-shell .sidebar {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 100;
+        width: 260px !important;
+        height: 100vh !important;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar-open .app-shell .sidebar {
+        transform: translateX(0);
+    }
+
+    .sidebar-open .sidebar-backdrop {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 35, 93, 0.4);
+        backdrop-filter: blur(4px);
+        z-index: 90;
+    }
+}

@@ -62,6 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    document.querySelectorAll('[data-sidebar-toggle]').forEach((button) => {
+        button.addEventListener('click', () => {
+            document.body.classList.toggle('sidebar-open');
+        });
+    });
+
     const profileToggle = document.querySelector('[data-profile-toggle]');
     const profileDropdown = document.querySelector('[data-profile-dropdown]');
 

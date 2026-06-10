@@ -13,6 +13,9 @@
 @endphp
 
 <aside class="sidebar">
+    <button type="button" class="sidebar-close" data-sidebar-toggle aria-label="Close Sidebar">
+        <iconify-icon icon="heroicons:x-mark"></iconify-icon>
+    </button>
     <div class="brand-block">
         <div class="brand-logo">
             <img src="{{ asset('assets/images/logo_al-azhar.png') }}" alt="Al Azhar Syifa Budi Parahyangan">
