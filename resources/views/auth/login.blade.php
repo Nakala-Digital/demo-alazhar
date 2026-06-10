@@ -12,10 +12,10 @@
         <header class="topbar">
             <div class="brand-lockup">
                 <img class="school-logo school-logo--header" src="{{ asset('images/logo-alazhar.png') }}" alt="Logo Al Azhar Syifa Budi Parahyangan">
-                <div class="brand-copy">
-                    <strong>Al Azhar</strong> <span>Syifa Budi Parahyangan</span>
-                    <span class="brand-divider" aria-hidden="true"></span>
-                    <span>PPDB Portal 2026/2027</span>
+                <div class="brand-copy flex items-center">
+                    <strong class="text-[#092f6a] text-[17px] font-bold tracking-tight">Al Azhar Syifa Budi Parahyangan</strong>
+                    <span class="w-[1px] h-5 bg-slate-300 mx-4" aria-hidden="true"></span>
+                    <span class="text-slate-500 text-[15px] font-medium tracking-wide">PPDB Portal 2026/2027</span>
                 </div>
             </div>
 

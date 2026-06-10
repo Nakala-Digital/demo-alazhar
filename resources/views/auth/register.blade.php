@@ -12,16 +12,16 @@
         <header class="topbar">
             <div class="brand-lockup">
                 <img class="school-logo school-logo--header" src="{{ asset('images/logo-alazhar.png') }}" alt="Logo Al Azhar Syifa Budi Parahyangan">
-                <div class="brand-copy">
-                    <strong>Al Azhar Syifa Budi Parahyangan</strong>
-                    <span class="brand-divider" aria-hidden="true"></span>
-                    <span>PPDB Portal 2026/2027</span>
+                <div class="brand-copy flex items-center">
+                    <strong class="text-[#092f6a] text-[17px] font-bold tracking-tight">Al Azhar Syifa Budi Parahyangan</strong>
+                    <span class="w-[1px] h-5 bg-slate-300 mx-4" aria-hidden="true"></span>
+                    <span class="text-slate-500 text-[15px] font-medium tracking-wide">PPDB Portal 2026/2027</span>
                 </div>
             </div>
             <div class="header-support">
                 <div class="support-item">
                     <span class="support-icon support-icon--green">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.45L3 20.5l1.55-5.25A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.2 7.4c.3-.3.7-.2.9.2l1 2c.2.3.1.7-.2.9l-.7.6c.6 1.5 1.8 2.7 3.3 3.3l.6-.7c.2-.3.6-.4.9-.2l2 1c.4.2.5.6.2.9-.7.9-1.7 1.3-2.8 1.1-3.6-.7-6.4-3.5-7.1-7.1-.2-1.1.2-2.1 1.1-2.8Z"/></svg>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" style="fill: currentColor; stroke: none;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
                     </span>
                     <span><small>Butuh bantuan?</small><strong>0811-2233-4455</strong></span>
                 </div>
@@ -74,8 +74,9 @@
             </section>
 
             <section class="login-panel register-panel">
-                <div class="login-card register-card">
-                    <div class="login-heading register-heading">
+                <div class="w-full max-w-[800px] mx-auto p-4 sm:p-6 lg:p-7 bg-slate-50/70 border border-slate-100/50 rounded-[32px] shadow-[0_8px_30px_rgba(0,0,0,0.02)]">
+                    <div class="login-card register-card !m-0 !max-w-none !shadow-[0_8px_24px_rgba(11,35,74,0.04)]">
+                        <div class="login-heading register-heading">
                         <h2>Daftar Akun Baru</h2>
                         <p>Lengkapi data berikut untuk membuat akun orang tua / wali.</p>
                     </div>
@@ -86,11 +87,11 @@
 
                         <div class="role-tabs register-role-tabs" aria-label="Jenis akun">
                             <button type="button" class="role-tab is-active" data-register-role="parent" aria-selected="true">
-                                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/></svg>
+                                <svg viewBox="0 0 24 24" class="!w-[18px] !h-[18px]"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/></svg>
                                 Orang Tua / Wali
                             </button>
                             <button type="button" class="role-tab register-admin-tab" data-register-role="admin" aria-selected="false">
-                                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/></svg>
+                                <svg viewBox="0 0 24 24" class="!w-[18px] !h-[18px]"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/></svg>
                                 Panitia / Admin
                             </button>
                         </div>
@@ -99,7 +100,7 @@
                             <div class="register-field">
                                 <label class="field-label" for="name">Nama Lengkap Orang Tua / Wali</label>
                                 <div class="input-wrap @error('name') input-wrap--error @enderror">
-                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6 20v-2a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v2"/></svg>
+                                    <svg viewBox="0 0 24 24" class="!w-[18px] !h-[18px] !stroke-[1.5] text-slate-400"><circle cx="12" cy="8" r="3"/><path d="M6 20v-2a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v2"/></svg>
                                     <input id="name" name="name" type="text" value="{{ old('name') }}" placeholder="Contoh: Ahmad Fauzi" autocomplete="name">
                                 </div>
                                 @error('name')<p class="field-error">{{ $message }}</p>@enderror
@@ -108,7 +109,7 @@
                             <div class="register-field">
                                 <label class="field-label" for="email">Email</label>
                                 <div class="input-wrap @error('email') input-wrap--error @enderror">
-                                    <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+                                    <svg viewBox="0 0 24 24" class="!w-[18px] !h-[18px] !stroke-[1.5] text-slate-400"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
                                     <input id="email" name="email" type="email" value="{{ old('email') }}" placeholder="Contoh: email@gmail.com" autocomplete="email">
                                 </div>
                                 @error('email')<p class="field-error">{{ $message }}</p>@enderror
@@ -117,7 +118,7 @@
                             <div class="register-field">
                                 <label class="field-label" for="phone">No. HP / WhatsApp</label>
                                 <div class="input-wrap @error('phone') input-wrap--error @enderror">
-                                    <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2c1.5 3 3.5 5 6.5 6.5l2-3 5 2v4c0 1-1 2-2 2C10 22 2 14 2 5c0-1 1-2 3-1Z"/></svg>
+                                    <svg viewBox="0 0 24 24" class="!w-[18px] !h-[18px] !stroke-[1.5] text-slate-400"><path d="M5 4h4l2 5-3 2c1.5 3 3.5 5 6.5 6.5l2-3 5 2v4c0 1-1 2-2 2C10 22 2 14 2 5c0-1 1-2 3-1Z"/></svg>
                                     <input id="phone" name="phone" type="tel" value="{{ old('phone') }}" placeholder="Contoh: 0812-xxxx-xxxx" autocomplete="tel">
                                 </div>
                                 @error('phone')<p class="field-error">{{ $message }}</p>@enderror
@@ -126,11 +127,11 @@
                             <div class="register-field">
                                 <label class="field-label" for="register-password">Password</label>
                                 <div class="input-wrap @error('password') input-wrap--error @enderror">
-                                    <svg viewBox="0 0 24 24"><rect x="6" y="10" width="12" height="10" rx="2"/><path d="M9 10V7a3 3 0 0 1 6 0v3M12 14v2"/></svg>
+                                    <svg viewBox="0 0 24 24" class="!w-[18px] !h-[18px] !stroke-[1.5] text-slate-400"><rect x="6" y="10" width="12" height="10" rx="2"/><path d="M9 10V7a3 3 0 0 1 6 0v3M12 14v2"/></svg>
                                     <input id="register-password" name="password" type="password" placeholder="Minimal 8 karakter" autocomplete="new-password">
                                     <button type="button" class="password-toggle" data-target="register-password" aria-label="Tampilkan kata sandi" aria-pressed="false">
-                                        <svg class="eye-open" viewBox="0 0 24 24"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
-                                        <svg class="eye-closed" viewBox="0 0 24 24"><path d="m4 4 16 16M10.6 6.2A9 9 0 0 1 12 6c5.5 0 9 6 9 6a15 15 0 0 1-2.2 2.8M6.2 6.2C4.2 7.6 3 12 3 12s3.5 6 9 6c1 0 1.9-.2 2.7-.5"/></svg>
+                                        <svg class="eye-open !w-[18px] !h-[18px] !stroke-[1.5]" viewBox="0 0 24 24"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+                                        <svg class="eye-closed !w-[18px] !h-[18px] !stroke-[1.5]" viewBox="0 0 24 24"><path d="m4 4 16 16M10.6 6.2A9 9 0 0 1 12 6c5.5 0 9 6 9 6a15 15 0 0 1-2.2 2.8M6.2 6.2C4.2 7.6 3 12 3 12s3.5 6 9 6c1 0 1.9-.2 2.7-.5"/></svg>
                                     </button>
                                 </div>
                                 @error('password')<p class="field-error">{{ $message }}</p>@enderror
@@ -139,11 +140,11 @@
                             <div class="register-field">
                                 <label class="field-label" for="password-confirmation">Konfirmasi Password</label>
                                 <div class="input-wrap">
-                                    <svg viewBox="0 0 24 24"><rect x="6" y="10" width="12" height="10" rx="2"/><path d="M9 10V7a3 3 0 0 1 6 0v3M12 14v2"/></svg>
+                                    <svg viewBox="0 0 24 24" class="!w-[18px] !h-[18px] !stroke-[1.5] text-slate-400"><rect x="6" y="10" width="12" height="10" rx="2"/><path d="M9 10V7a3 3 0 0 1 6 0v3M12 14v2"/></svg>
                                     <input id="password-confirmation" name="password_confirmation" type="password" placeholder="Ulangi password Anda" autocomplete="new-password">
                                     <button type="button" class="password-toggle" data-target="password-confirmation" aria-label="Tampilkan kata sandi" aria-pressed="false">
-                                        <svg class="eye-open" viewBox="0 0 24 24"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
-                                        <svg class="eye-closed" viewBox="0 0 24 24"><path d="m4 4 16 16M10.6 6.2A9 9 0 0 1 12 6c5.5 0 9 6 9 6a15 15 0 0 1-2.2 2.8M6.2 6.2C4.2 7.6 3 12 3 12s3.5 6 9 6c1 0 1.9-.2 2.7-.5"/></svg>
+                                        <svg class="eye-open !w-[18px] !h-[18px] !stroke-[1.5]" viewBox="0 0 24 24"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+                                        <svg class="eye-closed !w-[18px] !h-[18px] !stroke-[1.5]" viewBox="0 0 24 24"><path d="m4 4 16 16M10.6 6.2A9 9 0 0 1 12 6c5.5 0 9 6 9 6a15 15 0 0 1-2.2 2.8M6.2 6.2C4.2 7.6 3 12 3 12s3.5 6 9 6c1 0 1.9-.2 2.7-.5"/></svg>
                                     </button>
                                 </div>
                             </div>
@@ -159,28 +160,35 @@
                                         <option value="saudara" @selected(old('relationship') === 'saudara')>Saudara</option>
                                         <option value="lainnya" @selected(old('relationship') === 'lainnya')>Lainnya</option>
                                     </select>
-                                    <svg viewBox="0 0 24 24"><path d="m7 9 5 5 5-5"/></svg>
+                                    <svg viewBox="0 0 24 24" class="!w-[18px] !h-[18px] !stroke-[1.5] text-slate-400"><path d="m7 9 5 5 5-5"/></svg>
                                 </div>
                                 @error('relationship')<p class="field-error">{{ $message }}</p>@enderror
                             </div>
                         </div>
 
                         <label class="remember-check register-terms">
-                            <input type="checkbox" name="terms" value="1" {{ old('terms') ? 'checked' : '' }}>
+                            <input type="checkbox" name="terms" value="1" {{ old('terms', true) ? 'checked' : '' }}>
                             <span><svg viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span>
                             <span>Saya menyetujui <a href="#">Syarat &amp; Ketentuan</a> dan <a href="#">Kebijakan Privasi</a> yang berlaku.</span>
                         </label>
                         @error('terms')<p class="field-error register-terms-error">{{ $message }}</p>@enderror
 
                         <button type="submit" class="button button--primary register-submit">
-                            <svg viewBox="0 0 24 24"><rect x="6" y="10" width="12" height="10" rx="2"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/></svg>
+                            <svg viewBox="0 0 24 24" class="!w-[18px] !h-[18px] !stroke-2"><rect x="6" y="10" width="12" height="10" rx="2"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/></svg>
                             Buat Akun
                         </button>
 
                         <div class="form-divider register-divider"><span>ATAU</span></div>
 
                         <button type="button" class="button button--google demo-action">
-                            <span class="google-g">G</span>
+                            <span class="google-icon mr-2 flex items-center justify-center" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" class="!w-[18px] !h-[18px]" style="fill: none; stroke: none;" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                                </svg>
+                            </span>
                             Daftar dengan Google
                         </button>
 
@@ -189,9 +197,10 @@
                     </form>
                 </div>
 
-                <div class="register-info-box">
-                    <svg viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg>
+                <div class="register-info-box !mt-4 sm:!mt-6">
+                    <svg viewBox="0 0 24 24" class="!w-[20px] !h-[20px] !stroke-[1.5]"><path d="M12 3 4 6v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg>
                     <span>Kami akan mengirimkan kode verifikasi melalui email atau WhatsApp Anda.</span>
+                </div>
                 </div>
             </section>
         </main>

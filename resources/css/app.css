@@ -533,33 +533,59 @@ a { color: inherit; }
     position: relative;
     z-index: 4;
     width: min(575px, calc(100% - 115px));
-    margin: 27px 0 0 clamp(58px, 5vw, 78px);
+    margin: 40px 0 0 clamp(40px, 5vw, 60px);
 }
-.register-kicker { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; font-size: 18px; font-weight: 600; }
+.register-kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; font-size: 15px; font-weight: 500; color: rgba(255, 255, 255, 0.9); }
 .register-kicker strong {
-    min-width: 43px;
-    height: 38px;
-    display: grid;
-    place-items: center;
-    border: 1px solid rgba(155,209,91,.55);
-    border-radius: 9px;
+    min-width: unset;
+    height: 26px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 6px;
     color: #fff;
-    background: linear-gradient(145deg, #79b83e, #4b8e28);
-    box-shadow: 0 6px 14px rgba(9,46,72,.25);
-    font-size: 19px;
+    background: #80bf43;
+    box-shadow: none;
+    font-size: 13px;
+    letter-spacing: 0.5px;
 }
-.register-wordmark { width: min(425px, 90%); margin-left: -30px; }
-.register-hero-copy { margin-top: 7px; }
-.register-hero-copy h1 { font-size: clamp(39px, 2.8vw, 50px); }
-.register-hero-copy p { font-size: 15px; }
-.register-benefits { max-width: 455px; margin-top: 14px; gap: 18px; }
-.register-benefits .benefit { font-size: 12px; }
+.register-wordmark { width: min(280px, 90%); margin-left: 0; margin-bottom: 40px; }
+.register-hero-copy { margin-top: 0; margin-bottom: 40px; }
+.register-hero-copy h1 { font-size: clamp(34px, 2.8vw, 42px); line-height: 1.15; font-weight: 700; color: #fff; margin-bottom: 16px; }
+.register-hero-copy h1 span { color: #80bf43; }
+.register-hero-copy p { font-size: 15px; color: rgba(255, 255, 255, 0.85); line-height: 1.6; max-width: 440px; }
+.register-benefits { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 480px; gap: 16px; }
+.register-benefits .benefit { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; font-size: 11px; font-weight: 500; color: rgba(255, 255, 255, 0.85); line-height: 1.35; }
 .register-benefits .benefit span {
-    width: 46px;
-    height: 46px;
-    background: linear-gradient(145deg, rgba(118,184,67,.95), rgba(62,122,37,.92));
+    width: 44px;
+    height: 44px;
+    background: rgba(128, 191, 67, 0.15);
+    border: 1px solid rgba(128, 191, 67, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.register-security-badge { left: 62px; bottom: 27px; }
+.register-benefits .benefit svg { width: 20px; height: 20px; fill: none; stroke: #80bf43; stroke-width: 2; }
+.register-security-badge { 
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: rgba(11, 30, 66, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    position: absolute;
+    left: clamp(40px, 5vw, 60px);
+    bottom: 30px;
+    z-index: 5;
+    max-width: 90%;
+}
+.register-security-badge svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; }
+.register-security-badge span { font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.9); }
 
 .register-panel {
     position: relative;
