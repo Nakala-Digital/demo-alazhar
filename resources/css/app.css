@@ -3823,6 +3823,7 @@ iconify-icon {
 .status-process,
 .status-card,
 .admin-note-card {
+    min-width: 0;
     background: #fff;
     border: 1px solid #dfe7f2;
     border-radius: 8px;
@@ -4931,6 +4932,10 @@ iconify-icon {
     font-weight: 500;
 }
 
+.welcome-copy, .current-status {
+    min-width: 0;
+}
+
 .schedule-dashboard .step-meta iconify-icon {
     font-size: 15px;
     color: #64748b;
@@ -5283,14 +5288,7 @@ iconify-icon {
         min-height: 0;
     }
 
-    .side-nav {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
 
-    .logout-wrap,
-    .sidebar-message {
-        display: none;
-    }
 
     .topbar {
         position: relative;
@@ -5304,6 +5302,10 @@ iconify-icon {
         gap: 10px;
         width: 100%;
         margin-top: 14px;
+    }
+
+    .topbar-meta .profile-menu {
+        grid-column: 1 / -1;
     }
 
     .meta-item {
@@ -5365,11 +5367,14 @@ iconify-icon {
     }
 
     .tracking-steps {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 24px;
+        flex-wrap: nowrap;
     }
 
-    .tracking-step::after {
-        display: none;
+    .tracking-step {
+        flex: 0 0 120px;
     }
 
     .status-registration-page .footerbar {
@@ -5451,13 +5456,9 @@ iconify-icon {
         padding: 16px;
     }
 
-    .tracking-steps {
-        grid-template-columns: 1fr;
-        padding: 16px;
-    }
 
-    .info-registration dl div,
-    .progress-body {
+
+    .info-registration dl div {
         grid-template-columns: 1fr;
     }
 
@@ -5722,12 +5723,48 @@ iconify-icon {
 
 
     .status-registration-page .status-welcome {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
+        grid-template-columns: clamp(50px, 12vw, 64px) 1fr;
+        justify-items: start;
+        text-align: left;
     }
 
-    .status-registration-page .process-summary,
+    .status-registration-page .status-welcome .student-select,
+    .status-registration-page .status-welcome .change-child {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    .status-registration-page .process-summary {
+        grid-template-columns: clamp(50px, 12vw, 64px) 1fr;
+    }
+
+    .status-registration-page .process-note {
+        grid-column: 1 / -1;
+    }
+
+    .status-registration-page .welcome-mark,
+    .status-registration-page .process-icon {
+        width: clamp(50px, 12vw, 64px);
+        height: clamp(50px, 12vw, 64px);
+    }
+
+    .status-registration-page .tracking-steps {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 24px;
+        flex-wrap: nowrap;
+        gap: 16px;
+    }
+
+    .status-registration-page .tracking-step {
+        flex: 0 0 110px;
+    }
+
+    .status-registration-page .tracking-step::after {
+        display: block !important;
+        right: -16px !important;
+    }
+
     .status-registration-page .status-content-grid,
     .status-registration-page .status-sidebar {
         grid-template-columns: 1fr;
@@ -5738,24 +5775,12 @@ iconify-icon {
         padding-left: 0;
         border-left: 0;
     }
-
-    .status-registration-page .tracking-steps {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .status-registration-page .tracking-step::after {
-        display: none;
-    }
 }
 
 @media (max-width: 760px) {
     .status-registration-page .main-content,
     .status-registration-page .page-content {
         padding: 14px;
-    }
-
-    .status-registration-page .tracking-steps {
-        grid-template-columns: 1fr;
     }
 
     .status-registration-page .verification-row {
@@ -6183,6 +6208,38 @@ iconify-icon {
     .banner-right {
         border-left: none;
         border-top: 1px solid #e2e8f0;
+        flex-direction: column;
+        padding: 24px 20px;
+        position: relative;
+        overflow: hidden;
+    }
+    .confetti-decoration {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.15;
+        margin: 0;
+        pointer-events: none;
+        z-index: 0;
+    }
+    .confetti-decoration svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .student-info-card {
+        width: 100%;
+        min-width: 0;
+        z-index: 1;
+        position: relative;
+    }
+    .trophy-illustration {
+        width: 200px;
+        height: 180px;
+        z-index: 1;
+        position: relative;
     }
     .next-steps-wrapper {
         flex-direction: column;
@@ -6204,6 +6261,25 @@ iconify-icon {
     }
     .horizontal-timeline .timeline-item {
         width: 100%;
+    }
+    
+    .important-notes-alert {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px 24px;
+    }
+    .notes-illustration {
+        margin-left: 0;
+        align-self: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .notes-illustration svg {
+        width: 100%;
+        max-width: 240px;
+        height: auto;
     }
 }
 
@@ -8061,9 +8137,13 @@ body .sidebar .sidebar-message strong {
         bottom: 0;
         z-index: 100;
         width: 260px !important;
-        height: 100vh !important;
+        height: 100% !important;
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: contain;
+        padding-bottom: 40px !important;
     }
 
     .sidebar-open .app-shell .sidebar {
