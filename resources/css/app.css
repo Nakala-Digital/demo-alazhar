@@ -1381,9 +1381,12 @@ a { color: inherit; }
 .admin-line-chart .grid { color: #e6ebf2; }
 .admin-line-chart .axis-labels { fill: #526788; stroke: none; font-size: 11px; }
 .admin-line-chart .line { fill: none; stroke-width: 2.5; }
-.admin-line-chart .line.blue, .admin-line-chart .dots.blue { color: #246ef0; stroke: #246ef0; fill: #246ef0; }
-.admin-line-chart .line.green, .admin-line-chart .dots.green { color: #2aaa60; stroke: #2aaa60; fill: #2aaa60; }
-.admin-line-chart .line.red, .admin-line-chart .dots.red { color: #f14444; stroke: #f14444; fill: #f14444; }
+.admin-line-chart .line.blue { stroke: #246ef0; }
+.admin-line-chart .dots.blue { fill: #246ef0; stroke: #246ef0; }
+.admin-line-chart .line.green { stroke: #2aaa60; }
+.admin-line-chart .dots.green { fill: #2aaa60; stroke: #2aaa60; }
+.admin-line-chart .line.red { stroke: #f14444; }
+.admin-line-chart .dots.red { fill: #f14444; stroke: #f14444; }
 
 .admin-donut-card { min-height: 312px; padding: 20px 20px 18px; }
 .admin-donut-body { min-height: 238px; display: grid; grid-template-columns: 178px 1fr; align-items: center; gap: 16px; }
