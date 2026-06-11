@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#082b63">
         <title>Masuk Portal PPDB | Al Azhar Syifa Budi Parahyangan</title>
-        @fonts
+        
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="ppdb-page login-page">
